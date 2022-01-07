@@ -14,6 +14,6 @@ var dicionary: [Int:String] = [
     3:"Helena"
 ]
 
-for (cod, name) in dicionary.reversed() {
+for (cod, name) in dicionary {
     print("Code: \(cod) name: \(name)")
 }

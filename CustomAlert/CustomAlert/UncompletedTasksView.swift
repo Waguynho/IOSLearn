@@ -23,7 +23,24 @@ struct UncompletedTasksView: View {
                             //completedTasksViewIsAppear = true
                         }
                 }
+                Section {
+                    ForEach(dataStore.incompleteTodoItems) { todoItem in
+                        ListCellView(todoItem: todoItem)
+                    }
+                }
             }
+            .listStyle(InsetGroupedListStyle())
+            .navigationBarItems(trailing: Button(action: {
+                    dataStore.currentAction = Action.actions.create
+                    dataStore.alertShowing = true
+                }) {
+                    Image(systemName: "plus.circle.fill")
+                        .font(.title3)
+                })
+                .navigationTitle("Waiting Tasks")
+        }
+        .textFieldAlert(isPresented: $dataStore.alertShowing) {
+            TextFieldAlert(action: dataStore.currentAction!)
         }
     }
 }

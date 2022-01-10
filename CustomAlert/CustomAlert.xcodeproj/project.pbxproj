@@ -22,6 +22,7 @@
 		76CD52872788B9C600E273D8 /* UITextFieldEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52862788B9C600E273D8 /* UITextFieldEx.swift */; };
 		76CD52892788BA6800E273D8 /* ViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52882788BA6800E273D8 /* ViewEx.swift */; };
 		76E59E1D278C6D9800C95A5B /* CompletedTasksSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E59E1C278C6D9800C95A5B /* CompletedTasksSectionView.swift */; };
+		76E59E1F278C718600C95A5B /* ListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E59E1E278C718600C95A5B /* ListCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		76CD52862788B9C600E273D8 /* UITextFieldEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldEx.swift; sourceTree = "<group>"; };
 		76CD52882788BA6800E273D8 /* ViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEx.swift; sourceTree = "<group>"; };
 		76E59E1C278C6D9800C95A5B /* CompletedTasksSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTasksSectionView.swift; sourceTree = "<group>"; };
+		76E59E1E278C718600C95A5B /* ListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				76CD52822788B62300E273D8 /* TextFieldAlert.swift */,
 				76CD52842788B6DE00E273D8 /* TextFieldAlertViewController.swift */,
 				76E59E1C278C6D9800C95A5B /* CompletedTasksSectionView.swift */,
+				76E59E1E278C718600C95A5B /* ListCellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				76CD527F2788B50000E273D8 /* TextFieldWrapper.swift in Sources */,
 				76CD526327887C4700E273D8 /* UncompletedTasksView.swift in Sources */,
 				76CD52852788B6DE00E273D8 /* TextFieldAlertViewController.swift in Sources */,
+				76E59E1F278C718600C95A5B /* ListCellView.swift in Sources */,
 				76CD52752788881F00E273D8 /* DateEx.swift in Sources */,
 				76CD52892788BA6800E273D8 /* ViewEx.swift in Sources */,
 				76CD52702788837500E273D8 /* TodoItem.swift in Sources */,

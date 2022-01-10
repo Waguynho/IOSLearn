@@ -12,6 +12,8 @@ struct UncompletedTasksView: View {
     // MARK: - Properties
     @ObservedObject var dataStore = DataStore.shared
     
+    @State private var completedTasksViewIsAppear: Bool = false
+
     
     // MARK: - View
     var body: some View {
@@ -20,7 +22,7 @@ struct UncompletedTasksView: View {
                 if !dataStore.completedTodoItems.isEmpty {
                     CompletedTasksSectionView(count: dataStore.completedTodoItems.count)
                         .onTapGesture {
-                            //completedTasksViewIsAppear = true
+                            completedTasksViewIsAppear = true
                         }
                 }
                 Section {
@@ -42,10 +44,13 @@ struct UncompletedTasksView: View {
         .textFieldAlert(isPresented: $dataStore.alertShowing) {
             TextFieldAlert(action: dataStore.currentAction!)
         }
+        .sheet(isPresented: $completedTasksViewIsAppear, content: {
+            CompletedTasksView()
+        })
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct UncompletedTasksView_Previews: PreviewProvider {
     static var previews: some View {
         UncompletedTasksView()
     }

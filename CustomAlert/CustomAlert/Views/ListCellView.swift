@@ -1,11 +1,4 @@
-//
-//  ListCellView.swift
-//  CustomAlert
-//
-//  Created by Wagner Santos on 10/01/22.
-//
 
-import Foundation
 import SwiftUI
 
 struct ListCellView: View {
@@ -20,7 +13,7 @@ struct ListCellView: View {
             VStack(alignment: .leading, spacing: 5) {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(todoItem.title)
-                        .font(.title2)
+                  //      .font(.title2)
                         
                     if !todoItem.description!.isEmpty {
                         Text(todoItem.description!)

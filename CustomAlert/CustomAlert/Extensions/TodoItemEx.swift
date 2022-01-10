@@ -3,9 +3,7 @@
 //  CustomAlert
 //
 //  Created by Wagner Santos on 07/01/22.
-//
 
-import Foundation
 import UIKit
 
 extension TodoItem.Priority: RawRepresentable {

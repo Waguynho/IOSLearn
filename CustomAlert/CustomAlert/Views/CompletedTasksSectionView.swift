@@ -1,11 +1,4 @@
-//
-//  CompletedTasksSectionView.swift
-//  CustomAlert
-//
-//  Created by Wagner Santos on 10/01/22.
-//
 
-import Foundation
 import SwiftUI
 
 struct CompletedTasksSectionView: View {

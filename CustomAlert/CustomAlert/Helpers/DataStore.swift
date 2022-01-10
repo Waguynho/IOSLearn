@@ -1,11 +1,4 @@
-//
-//  DataStore.swift
-//  CustomAlert
-//
-//  Created by Wagner Santos on 07/01/22.
-//
 
-import Foundation
 
 import SwiftUI
 
@@ -17,6 +10,7 @@ class DataStore: ObservableObject {
     @Published var currentAction: Action? = nil
     @State var menuActions: [Action] = []
     @Published var alertShowing = false
+    
     
     var incompleteTodoItems: [TodoItem] {
         return allTodoItems.filter { todoItem in

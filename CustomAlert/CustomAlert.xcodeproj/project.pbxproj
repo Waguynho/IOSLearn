@@ -21,6 +21,7 @@
 		76CD52852788B6DE00E273D8 /* TextFieldAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52842788B6DE00E273D8 /* TextFieldAlertViewController.swift */; };
 		76CD52872788B9C600E273D8 /* UITextFieldEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52862788B9C600E273D8 /* UITextFieldEx.swift */; };
 		76CD52892788BA6800E273D8 /* ViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52882788BA6800E273D8 /* ViewEx.swift */; };
+		76E59E1D278C6D9800C95A5B /* CompletedTasksSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E59E1C278C6D9800C95A5B /* CompletedTasksSectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		76CD52842788B6DE00E273D8 /* TextFieldAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlertViewController.swift; sourceTree = "<group>"; };
 		76CD52862788B9C600E273D8 /* UITextFieldEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldEx.swift; sourceTree = "<group>"; };
 		76CD52882788BA6800E273D8 /* ViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEx.swift; sourceTree = "<group>"; };
+		76E59E1C278C6D9800C95A5B /* CompletedTasksSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTasksSectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				76CD527E2788B50000E273D8 /* TextFieldWrapper.swift */,
 				76CD52822788B62300E273D8 /* TextFieldAlert.swift */,
 				76CD52842788B6DE00E273D8 /* TextFieldAlertViewController.swift */,
+				76E59E1C278C6D9800C95A5B /* CompletedTasksSectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76E59E1D278C6D9800C95A5B /* CompletedTasksSectionView.swift in Sources */,
 				76CD527C27889BB900E273D8 /* DataStore.swift in Sources */,
 				76CD527727888C5100E273D8 /* TodoItemEx.swift in Sources */,
 				76CD527927888DB600E273D8 /* Action.swift in Sources */,

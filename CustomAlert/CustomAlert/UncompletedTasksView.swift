@@ -10,10 +10,21 @@ import SwiftUI
 struct UncompletedTasksView: View {
     
     // MARK: - Properties
-       @ObservedObject var dataStore = DataStore.shared
+    @ObservedObject var dataStore = DataStore.shared
+    
+    
+    // MARK: - View
     var body: some View {
-        Text("Hello, Wagner dos Santos!")
-            .padding()
+        NavigationView {
+            List {
+                if !dataStore.completedTodoItems.isEmpty {
+                    CompletedTasksSectionView(count: dataStore.completedTodoItems.count)
+                        .onTapGesture {
+                            //completedTasksViewIsAppear = true
+                        }
+                }
+            }
+        }
     }
 }
 

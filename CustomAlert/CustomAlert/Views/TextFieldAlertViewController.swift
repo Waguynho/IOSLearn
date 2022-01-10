@@ -28,6 +28,7 @@ class TextFieldAlertViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        presentAlertController()
     }
     
     // MARK: - Methods

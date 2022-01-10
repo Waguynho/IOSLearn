@@ -13,10 +13,11 @@ struct UncompletedTasksView: View {
     @ObservedObject var dataStore = DataStore.shared
     
     @State private var completedTasksViewIsAppear: Bool = false
-
+    
     
     // MARK: - View
     var body: some View {
+        
         NavigationView {
             List {
                 if !dataStore.completedTodoItems.isEmpty {
@@ -33,13 +34,13 @@ struct UncompletedTasksView: View {
             }
             .listStyle(InsetGroupedListStyle())
             .navigationBarItems(trailing: Button(action: {
-                    dataStore.currentAction = Action.actions.create
-                    dataStore.alertShowing = true
-                }) {
-                    Image(systemName: "plus.circle.fill")
-                        .font(.title3)
-                })
-                .navigationTitle("Waiting Tasks")
+                dataStore.currentAction = Action.actions.create
+                dataStore.alertShowing = true
+            }) {
+                Image(systemName: "plus.circle.fill")
+                    .font(.title3)
+            })
+            .navigationTitle("Waiting Tasks")
         }
         .textFieldAlert(isPresented: $dataStore.alertShowing) {
             TextFieldAlert(action: dataStore.currentAction!)
@@ -48,6 +49,7 @@ struct UncompletedTasksView: View {
             CompletedTasksView()
         })
     }
+    
 }
 
 struct UncompletedTasksView_Previews: PreviewProvider {

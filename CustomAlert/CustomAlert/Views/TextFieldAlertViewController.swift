@@ -11,7 +11,7 @@ class TextFieldAlertViewController: UIViewController {
     private let action: Action
     private var isPresented: Binding<Bool>?
     let pickerViewComponents = TodoItem.Priority.allCases
-    let pickerData = ["Urgent","Normal","Low", "None"]
+    let pickerData = ["Urgent","High","Normal","Low"]
 
     private var subscription: AnyCancellable?
     

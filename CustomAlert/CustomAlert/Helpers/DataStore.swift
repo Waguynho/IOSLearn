@@ -23,9 +23,7 @@ class DataStore: ObservableObject {
         }
     }
     
-    private func getSelectedTodoItemIndex(selected todoItem: TodoItem) -> Int {
-        allTodoItems.firstIndex(where: { $0.id == todoItem.id })!
-    }
+    
     
     func getMenuItems(selected todoItem: TodoItem) -> some View {
         var actions: [Action] {
@@ -66,6 +64,10 @@ class DataStore: ObservableObject {
         
     func create(_ todoItem: TodoItem) {
         allTodoItems.insert(todoItem, at: 0)
+    }
+    
+    private func getSelectedTodoItemIndex(selected todoItem: TodoItem) -> Int {
+        allTodoItems.firstIndex(where: { $0.id == todoItem.id })!
     }
 }
 

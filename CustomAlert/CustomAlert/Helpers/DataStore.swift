@@ -60,7 +60,8 @@ class DataStore: ObservableObject {
     }
         
     func edit(_ todoItem: TodoItem, newTodoItem: TodoItem) {
-        allTodoItems[getSelectedTodoItemIndex(selected: todoItem)] = newTodoItem
+        let index: Int = getSelectedTodoItemIndex(selected: todoItem)
+        allTodoItems[index] = newTodoItem
     }
         
     func create(_ todoItem: TodoItem) {

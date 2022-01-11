@@ -11,6 +11,7 @@ class TextFieldAlertViewController: UIViewController {
     private let action: Action
     private var isPresented: Binding<Bool>?
     let pickerViewComponents = TodoItem.Priority.allCases
+    let pickerData = ["Urgent","Normal","Low", "None"]
 
     private var subscription: AnyCancellable?
     
@@ -28,8 +29,15 @@ class TextFieldAlertViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+          
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
         presentAlertController()
     }
+    
+    
     
     // MARK: - Methods
     @objc func cancelAction() {

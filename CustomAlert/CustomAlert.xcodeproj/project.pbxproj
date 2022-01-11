@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		766157C32788D0F100F2DF9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CD526427887C4900E273D8 /* Assets.xcassets */; };
 		766157C42788D0FD00F2DF9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CD526727887C4900E273D8 /* Preview Assets.xcassets */; };
+		76874646278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76874645278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift */; };
 		76CD526127887C4700E273D8 /* CustomAlertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD526027887C4700E273D8 /* CustomAlertApp.swift */; };
 		76CD526327887C4700E273D8 /* UncompletedTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD526227887C4700E273D8 /* UncompletedTasksView.swift */; };
 		76CD52702788837500E273D8 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD526F2788837500E273D8 /* TodoItem.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		76874645278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlertViewControllerEx.swift; sourceTree = "<group>"; };
 		76CD525D27887C4700E273D8 /* CustomAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76CD526027887C4700E273D8 /* CustomAlertApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertApp.swift; sourceTree = "<group>"; };
 		76CD526227887C4700E273D8 /* UncompletedTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UncompletedTasksView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				76CD527627888C5100E273D8 /* TodoItemEx.swift */,
 				76CD52862788B9C600E273D8 /* UITextFieldEx.swift */,
 				76CD52882788BA6800E273D8 /* ViewEx.swift */,
+				76874645278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				76E59E1F278C718600C95A5B /* ListCellView.swift in Sources */,
 				76CD52752788881F00E273D8 /* DateEx.swift in Sources */,
 				76CD52892788BA6800E273D8 /* ViewEx.swift in Sources */,
+				76874646278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift in Sources */,
 				76CD52702788837500E273D8 /* TodoItem.swift in Sources */,
 				76CD52832788B62300E273D8 /* TextFieldAlert.swift in Sources */,
 				76CD526127887C4700E273D8 /* CustomAlertApp.swift in Sources */,

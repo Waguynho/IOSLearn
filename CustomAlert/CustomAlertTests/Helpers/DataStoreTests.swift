@@ -20,6 +20,24 @@ final class DataStoreTests: XCTestCase {
         
     }
     
+    func test_createTodoItem () throws {
+        let (sut,fields) = makeSut(completed: false)
+        let view = sut.getMenuItems(selected: fields.todoItem)
+        
+        let previewSize = sut.allTodoItems.count
+        
+        sut.create(fields.todoItem)
+        
+        do {
+            
+            XCTAssertTrue(sut.allTodoItems.count == (previewSize + 1))
+            
+        }catch{
+            XCTFail("Error in test: \(error)")
+        }
+        
+    }
+    
     
 }
 

@@ -9,33 +9,24 @@ final class DataStoreTests: XCTestCase {
         let (sut,fields) = makeSut(completed: false)
         let view = sut.getMenuItems(selected: fields.todoItem)
         
-        assertSnapshot(matching: view, as: .image, record: false)
+       _ = verifySnapshot(matching: view, as: .image, record: false, snapshotDirectory: snapshotDirectory)
         
     }
     
     func test_getMenuItemsCompletedTodoItemTrue() {
         let (sut,fields) = makeSut(completed: true)
         let view = sut.getMenuItems(selected: fields.todoItem)
-        assertSnapshot(matching: view, as: .image, record: false)
+        
+        _ = verifySnapshot(matching: view, as: .image, record: false, snapshotDirectory: snapshotDirectory)
         
     }
     
     func test_createTodoItem () throws {
         let (sut,fields) = makeSut(completed: false)
-        let view = sut.getMenuItems(selected: fields.todoItem)
-        
-        let previewSize = sut.allTodoItems.count
-        
+
         sut.create(fields.todoItem)
         
-        do {
-            
-            XCTAssertTrue(sut.allTodoItems.count == (previewSize + 1))
-            
-        }catch{
-            XCTFail("Error in test: \(error)")
-        }
-        
+        XCTAssertEqual(sut.allTodoItems.count, 6 )    
     }
     
     
@@ -48,6 +39,12 @@ extension DataStoreTests {
         ()
     )
     
+    private var snapshotDirectory: String {
+        #filePath.replacingOccurrences(
+            of: "Helpers/DataStoreTests.swift",
+            with: "__Snapshots__/DataStoreTests"
+        )
+    }
     
     func makeSut(completed: Bool) -> (Sut,Fields) {
         let sut: Sut = .init()

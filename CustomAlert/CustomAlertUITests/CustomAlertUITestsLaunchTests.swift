@@ -27,44 +27,27 @@ class CustomAlertUITestsLaunchTests: XCTestCase {
         // Insert steps here to perform after app launch but before taking a screenshot,
         // such as logging into a test account or navigating somewhere in the app
         
-        app.navigationBars["Waiting Tasks"].buttons["Add"].tap()
+        app.navigationBar.buttons["Add"].tap()
         
-        let titleInput = app.alerts["Create a new item"].textFields.element(boundBy: 0)
-        titleInput.typeText("Title Value")
+        let titleExpectation = "Title Value"
+        app.titleInputField.tap()
+        app.titleInputField.typeText(titleExpectation)
         
-        let descriptionInput = app.alerts["Create a new item"].textFields.element(boundBy: 1)
-        descriptionInput.tap()
-        descriptionInput.typeText("Description Value")
+        let descriptionExpectation = "Description Value"
+        app.descriptionInputField.tap()
+        app.descriptionInputField.typeText(descriptionExpectation)
         
-//        let priorityInput = app.alerts["Create a new item"].textFields.element(boundBy: 2)
-//        priorityInput.tap()
-//        app.pickers.element(boundBy: 0).pickerWheels.element(boundBy: 0).adjust(toPickerWheelValue: "Low")
-//
-//        let dateInput = app.alerts["Create a new item"].textFields.element(boundBy: 3)
-//        dateInput.tap()
-//        dateInput.datePickers.element(boundBy: 0)
-//        let now = Date()
-//        let nowString = DateFormatter().string(from: now)
-//        dateInput.typeText(nowString)
-        //var number =  makeSut().allTodoItems.count
-        app.alerts["Create a new item"].buttons["Create"].tap()
-        //number = makeSut().allTodoItems.count
-        let attachment = XCTAttachment(screenshot: app.screenshot())
-//        attachment.name = "Launch Screen"
-//        attachment.lifetime = .keepAlways
-//        add(attachment)
+        app.submitButton.tap()
+        
+        XCTAssertEqual(app.staticTexts[titleExpectation].label, "Title Value")
+        XCTAssertEqual(app.staticTexts[descriptionExpectation].label, "Description Value")
     }
-    
 }
 
-//extension CustomAlertUITestsLaunchTests{
-//
-//    typealias Sut = DataStore
-//
-//    func makeSut() -> (Sut) {
-//        let sut: Sut = .init()
-//
-//        return sut
-//    }
-//}
-
+private extension XCUIApplication {
+    var navigationBar: XCUIElement { self.navigationBars["Waiting Tasks"] }
+    var alert: XCUIElement { self.alerts["Create a new item"] }
+    var titleInputField: XCUIElement { self.textFields["title-label"] }
+    var descriptionInputField: XCUIElement { self.textFields["description-label"] }
+    var submitButton: XCUIElement { self.buttons["submit-button"] }
+}

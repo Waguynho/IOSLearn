@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76584DFA2790B2DD001A6606 /* CustomAlertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76584DF92790B2DD001A6606 /* CustomAlertUITests.swift */; };
+		76584DFC2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76584DFB2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift */; };
 		766157C32788D0F100F2DF9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CD526427887C4900E273D8 /* Assets.xcassets */; };
 		766157C42788D0FD00F2DF9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CD526727887C4900E273D8 /* Preview Assets.xcassets */; };
 		76874646278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76874645278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift */; };
@@ -32,6 +34,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		76584DFD2790B2DD001A6606 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76CD525527887C4700E273D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76CD525C27887C4700E273D8;
+			remoteInfo = CustomAlert;
+		};
 		76874656278DCC2A00C0EBFC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 76CD525527887C4700E273D8 /* Project object */;
@@ -42,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		76584DF72790B2DD001A6606 /* CustomAlertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomAlertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		76584DF92790B2DD001A6606 /* CustomAlertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertUITests.swift; sourceTree = "<group>"; };
+		76584DFB2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		76874645278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlertViewControllerEx.swift; sourceTree = "<group>"; };
 		76874652278DCC2A00C0EBFC /* CustomAlertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomAlertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76874654278DCC2A00C0EBFC /* CustomAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertTests.swift; sourceTree = "<group>"; };
@@ -68,6 +80,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		76584DF42790B2DD001A6606 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7687464F278DCC2A00C0EBFC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76584DF82790B2DD001A6606 /* CustomAlertUITests */ = {
+			isa = PBXGroup;
+			children = (
+				76584DF92790B2DD001A6606 /* CustomAlertUITests.swift */,
+				76584DFB2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift */,
+			);
+			path = CustomAlertUITests;
+			sourceTree = "<group>";
+		};
 		76874653278DCC2A00C0EBFC /* CustomAlertTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +144,7 @@
 			children = (
 				76CD525F27887C4700E273D8 /* CustomAlert */,
 				76874653278DCC2A00C0EBFC /* CustomAlertTests */,
+				76584DF82790B2DD001A6606 /* CustomAlertUITests */,
 				76CD525E27887C4700E273D8 /* Products */,
 				76874661278DDAEB00C0EBFC /* Frameworks */,
 			);
@@ -126,6 +155,7 @@
 			children = (
 				76CD525D27887C4700E273D8 /* CustomAlert.app */,
 				76874652278DCC2A00C0EBFC /* CustomAlertTests.xctest */,
+				76584DF72790B2DD001A6606 /* CustomAlertUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,6 +236,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		76584DF62790B2DD001A6606 /* CustomAlertUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76584E012790B2DD001A6606 /* Build configuration list for PBXNativeTarget "CustomAlertUITests" */;
+			buildPhases = (
+				76584DF32790B2DD001A6606 /* Sources */,
+				76584DF42790B2DD001A6606 /* Frameworks */,
+				76584DF52790B2DD001A6606 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76584DFE2790B2DD001A6606 /* PBXTargetDependency */,
+			);
+			name = CustomAlertUITests;
+			productName = CustomAlertUITests;
+			productReference = 76584DF72790B2DD001A6606 /* CustomAlertUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		76874651278DCC2A00C0EBFC /* CustomAlertTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76874658278DCC2A00C0EBFC /* Build configuration list for PBXNativeTarget "CustomAlertTests" */;
@@ -256,6 +304,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					76584DF62790B2DD001A6606 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 76CD525C27887C4700E273D8;
+					};
 					76874651278DCC2A00C0EBFC = {
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 76CD525C27887C4700E273D8;
@@ -283,11 +335,19 @@
 			targets = (
 				76CD525C27887C4700E273D8 /* CustomAlert */,
 				76874651278DCC2A00C0EBFC /* CustomAlertTests */,
+				76584DF62790B2DD001A6606 /* CustomAlertUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		76584DF52790B2DD001A6606 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		76874650278DCC2A00C0EBFC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,6 +367,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		76584DF32790B2DD001A6606 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76584DFC2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift in Sources */,
+				76584DFA2790B2DD001A6606 /* CustomAlertUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7687464E278DCC2A00C0EBFC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -343,6 +412,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		76584DFE2790B2DD001A6606 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76CD525C27887C4700E273D8 /* CustomAlert */;
+			targetProxy = 76584DFD2790B2DD001A6606 /* PBXContainerItemProxy */;
+		};
 		76874657278DCC2A00C0EBFC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 76CD525C27887C4700E273D8 /* CustomAlert */;
@@ -351,6 +425,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		76584DFF2790B2DD001A6606 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ws.company.CustomAlertUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CustomAlert;
+			};
+			name = Debug;
+		};
+		76584E002790B2DD001A6606 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ws.company.CustomAlertUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CustomAlert;
+			};
+			name = Release;
+		};
 		76874659278DCC2A00C0EBFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -560,6 +666,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		76584E012790B2DD001A6606 /* Build configuration list for PBXNativeTarget "CustomAlertUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76584DFF2790B2DD001A6606 /* Debug */,
+				76584E002790B2DD001A6606 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		76874658278DCC2A00C0EBFC /* Build configuration list for PBXNativeTarget "CustomAlertTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

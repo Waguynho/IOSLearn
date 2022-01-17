@@ -60,6 +60,8 @@ class TextFieldAlertViewController: UIViewController {
                 alertController.addTextField()
                 alertController.addTextField()
                 alertController.textFields![0].placeholder = "Title"
+                
+                
                 alertController.textFields![1].placeholder = "Description"
                 alertController.textFields![2].placeholder = "Priority"
                 alertController.textFields![2].inputView = pickerView

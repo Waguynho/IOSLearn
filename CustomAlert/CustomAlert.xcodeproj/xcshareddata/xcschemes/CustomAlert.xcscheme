@@ -39,6 +39,16 @@
                ReferencedContainer = "container:CustomAlert.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "76584DF62790B2DD001A6606"
+               BuildableName = "CustomAlertUITests.xctest"
+               BlueprintName = "CustomAlertUITests"
+               ReferencedContainer = "container:CustomAlert.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

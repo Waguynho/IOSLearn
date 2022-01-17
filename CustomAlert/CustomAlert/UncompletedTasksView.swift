@@ -19,6 +19,7 @@ struct UncompletedTasksView: View {
     var body: some View {
         
         NavigationView {
+            
             List {
                 if !dataStore.completedTodoItems.isEmpty {
                     CompletedTasksSectionView(count: dataStore.completedTodoItems.count)
@@ -33,13 +34,17 @@ struct UncompletedTasksView: View {
                 }
             }
             .listStyle(InsetGroupedListStyle())
-            .navigationBarItems(trailing: Button(action: {
-                dataStore.currentAction = Action.actions.create
-                dataStore.alertShowing = true
-            }) {
-                Image(systemName: "plus.circle.fill")
-                    .font(.title3)
-            })
+            .navigationBarItems(
+                trailing: Button(
+                    action: {
+                        dataStore.currentAction = Action.actions.create
+                        dataStore.alertShowing = true
+                    },
+                    label: {
+                        Image(systemName: "plus.circle.fill")
+                       .font(.title3)
+                    })
+            )
             .navigationTitle("Waiting Tasks")
         }
         .textFieldAlert(isPresented: $dataStore.alertShowing) {

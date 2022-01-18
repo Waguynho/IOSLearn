@@ -1,7 +1,7 @@
 
 import Foundation
 
-class ChatModel: ObservableObject {
+public final class ChatModel: ObservableObject {
     var text = ""
     @Published var arrayOfMessages : [String] = []
     @Published var arrayOfPositions : [BubblePosition] = []

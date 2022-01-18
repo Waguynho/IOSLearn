@@ -2,9 +2,10 @@
 //  ChatFramework.h
 //  ChatFramework
 //
-//  Created by Wagner Santos on 18/01/22.
+//  Created by Tayrony Oliveira on 18/01/22.
 //
 
+#import <Foundation/Foundation.h>
 
 //! Project version number for ChatFramework.
 FOUNDATION_EXPORT double ChatFrameworkVersionNumber;

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ChatFramework
 
 struct ChatBubble<Content>: View where Content: View {
     let position: BubblePosition

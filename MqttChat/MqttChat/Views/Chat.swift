@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Chat
 
 struct Chat: View {
     @ObservedObject var model = ChatModel()

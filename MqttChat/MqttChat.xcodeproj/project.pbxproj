@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2EAF683727971A3C00F7D082 /* ChatFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF683627971A3C00F7D082 /* ChatFramework.framework */; };
 		2EAF684727971A7D00F7D082 /* ChatFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF683F27971A7D00F7D082 /* ChatFramework.framework */; };
 		2EAF684E27971A7D00F7D082 /* ChatFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAF684D27971A7D00F7D082 /* ChatFrameworkTests.swift */; };
 		2EAF684F27971A7D00F7D082 /* ChatFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EAF684127971A7D00F7D082 /* ChatFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2EAF685227971A7D00F7D082 /* ChatFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF683F27971A7D00F7D082 /* ChatFramework.framework */; };
-		2EAF685327971A7D00F7D082 /* ChatFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF683F27971A7D00F7D082 /* ChatFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7635815B27970D62005A5112 /* MqttChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7635815A27970D62005A5112 /* MqttChatApp.swift */; };
 		7635815D27970D62005A5112 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7635815C27970D62005A5112 /* ContentView.swift */; };
 		7635815F27970D63005A5112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7635815E27970D63005A5112 /* Assets.xcassets */; };
@@ -24,6 +21,10 @@
 		7635818D27970E56005A5112 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7635818C27970E56005A5112 /* CustomScrollView.swift */; };
 		7635818F27970E85005A5112 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7635818E27970E85005A5112 /* Chat.swift */; };
 		763581A627971176005A5112 /* ChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763581A527971176005A5112 /* ChatTests.swift */; };
+		763581D827971CD5005A5112 /* ChatFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF683F27971A7D00F7D082 /* ChatFramework.framework */; };
+		763581D927971CD5005A5112 /* ChatFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF683F27971A7D00F7D082 /* ChatFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		763581DD27971EC2005A5112 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAF685B27971A8500F7D082 /* ChatModel.swift */; };
+		763581DE27971EEB005A5112 /* BubblePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAF685C27971A8500F7D082 /* BubblePosition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,13 +41,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 7635815627970D62005A5112;
 			remoteInfo = MqttChat;
-		};
-		2EAF685027971A7D00F7D082 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7635814F27970D62005A5112 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2EAF683E27971A7D00F7D082;
-			remoteInfo = ChatFramework;
 		};
 		7635816827970D64005A5112 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -69,16 +63,23 @@
 			remoteGlobalIDString = 7635815627970D62005A5112;
 			remoteInfo = MqttChat;
 		};
+		763581DA27971CD5005A5112 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7635814F27970D62005A5112 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EAF683E27971A7D00F7D082;
+			remoteInfo = ChatFramework;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2EAF685727971A7D00F7D082 /* Embed Frameworks */ = {
+		763581DC27971CD6005A5112 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2EAF685327971A7D00F7D082 /* ChatFramework.framework in Embed Frameworks */,
+				763581D927971CD5005A5112 /* ChatFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,8 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EAF683727971A3C00F7D082 /* ChatFramework.framework in Frameworks */,
-				2EAF685227971A7D00F7D082 /* ChatFramework.framework in Frameworks */,
+				763581D827971CD5005A5112 /* ChatFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +163,7 @@
 		2EAF684027971A7D00F7D082 /* ChatFramework */ = {
 			isa = PBXGroup;
 			children = (
-				2EAF685D27971A8500F7D082 /* DataModels */,
+				763581DF27972931005A5112 /* DataModels */,
 				2EAF684127971A7D00F7D082 /* ChatFramework.h */,
 			);
 			path = ChatFramework;
@@ -175,15 +175,6 @@
 				2EAF684D27971A7D00F7D082 /* ChatFrameworkTests.swift */,
 			);
 			path = ChatFrameworkTests;
-			sourceTree = "<group>";
-		};
-		2EAF685D27971A8500F7D082 /* DataModels */ = {
-			isa = PBXGroup;
-			children = (
-				2EAF685B27971A8500F7D082 /* ChatModel.swift */,
-				2EAF685C27971A8500F7D082 /* BubblePosition.swift */,
-			);
-			path = DataModels;
 			sourceTree = "<group>";
 		};
 		7635814E27970D62005A5112 = {
@@ -277,6 +268,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		763581DF27972931005A5112 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				2EAF685C27971A8500F7D082 /* BubblePosition.swift */,
+				2EAF685B27971A8500F7D082 /* ChatModel.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -335,12 +335,12 @@
 				7635815327970D62005A5112 /* Sources */,
 				7635815427970D62005A5112 /* Frameworks */,
 				7635815527970D62005A5112 /* Resources */,
-				2EAF685727971A7D00F7D082 /* Embed Frameworks */,
+				763581DC27971CD6005A5112 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2EAF685127971A7D00F7D082 /* PBXTargetDependency */,
+				763581DB27971CD5005A5112 /* PBXTargetDependency */,
 			);
 			name = MqttChat;
 			productName = MqttChat;
@@ -510,6 +510,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				763581DE27971EEB005A5112 /* BubblePosition.swift in Sources */,
+				763581DD27971EC2005A5112 /* ChatModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,11 +573,6 @@
 			target = 7635815627970D62005A5112 /* MqttChat */;
 			targetProxy = 2EAF684A27971A7D00F7D082 /* PBXContainerItemProxy */;
 		};
-		2EAF685127971A7D00F7D082 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2EAF683E27971A7D00F7D082 /* ChatFramework */;
-			targetProxy = 2EAF685027971A7D00F7D082 /* PBXContainerItemProxy */;
-		};
 		7635816927970D64005A5112 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7635815627970D62005A5112 /* MqttChat */;
@@ -590,6 +587,11 @@
 			isa = PBXTargetDependency;
 			target = 7635815627970D62005A5112 /* MqttChat */;
 			targetProxy = 763581A227971176005A5112 /* PBXContainerItemProxy */;
+		};
+		763581DB27971CD5005A5112 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EAF683E27971A7D00F7D082 /* ChatFramework */;
+			targetProxy = 763581DA27971CD5005A5112 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -805,6 +807,7 @@
 		7635817C27970D64005A5112 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -833,6 +836,7 @@
 		7635817D27970D64005A5112 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;

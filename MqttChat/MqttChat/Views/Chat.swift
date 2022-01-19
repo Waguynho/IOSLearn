@@ -9,7 +9,7 @@ import SwiftUI
 import ChatFramework
 
 struct Chat: View {
-    @ObservedObject var model = ChatModel()
+    @ObservedObject var model = ChatModel("")
     
     var body: some View {
         GeometryReader { geo in

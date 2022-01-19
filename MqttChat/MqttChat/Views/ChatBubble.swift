@@ -11,7 +11,7 @@ import ChatFramework
 struct ChatBubble<Content>: View where Content: View {
     let position: BubblePosition
     let color : Color
-    let content: () -> Content
+    public let content: () -> Content
     init(position: BubblePosition, color: Color, @ViewBuilder content: @escaping () -> Content) {
         self.content = content
         self.color = color

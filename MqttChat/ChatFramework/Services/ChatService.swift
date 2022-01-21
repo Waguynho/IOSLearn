@@ -29,7 +29,8 @@ public final class ChatService {
                         print("Error addPublishListener: \(error)")
                     case .success(let publishInfo):
                         if publishInfo.topicName == "chatModel/myTopic" {
-                            var msgReceived = publishInfo.payload
+                            let msgReceived = publishInfo.payload
+                            self.receiveMessage(buffer: msgReceived)
                         }
                     }
                 }
@@ -75,6 +76,17 @@ public final class ChatService {
             case let .failure(error):
                 print("Error publish: \(error)")
             }
+        }
+    }
+    
+    private func receiveMessage(buffer: ByteBuffer!) {
+        
+        var bytesBuffer = buffer.getBytes(at: 0, length: buffer.readableBytes)
+        
+        if let string = String(bytes: bytesBuffer!, encoding: .utf8) {
+            print(string)
+        } else {
+            print("not a valid UTF-8 sequence")
         }
     }
 }

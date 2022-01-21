@@ -7,17 +7,23 @@ import Combine
 
 public final class ChatService {
     
+    private let identifier = UUID().uuidString
     
-    let myTopic = "chatModel/myTopic"
+    private let myTopic = "chatModel/myTopic"
     
     let messangeObservable: PassthroughSubject<String, Never> = .init()
     
-    let client = MQTTClient (
-        host: "test.mosquitto.org",/*https://test.mosquitto.org,  https://www.hivemq.com, https://mqtt.eclipseprojects.io*/
-        port: 1883,
-        identifier: UUID().uuidString,
-        eventLoopGroupProvider: .createNew
-    )
+    let client: MQTTClient
+    
+    init(){
+        
+        client = MQTTClient (
+            host: "test.mosquitto.org",/*https://test.mosquitto.org,  https://www.hivemq.com, https://mqtt.eclipseprojects.io*/
+            port: 1883,
+            identifier: identifier,
+            eventLoopGroupProvider: .createNew
+        )
+    }
 
     
     fileprivate func AddListener() {

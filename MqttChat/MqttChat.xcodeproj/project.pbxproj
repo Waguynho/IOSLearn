@@ -25,6 +25,8 @@
 		763581D927971CD5005A5112 /* ChatFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2EAF683F27971A7D00F7D082 /* ChatFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		763581DD27971EC2005A5112 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAF685B27971A8500F7D082 /* ChatModel.swift */; };
 		763581DE27971EEB005A5112 /* BubblePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAF685C27971A8500F7D082 /* BubblePosition.swift */; };
+		769AD5D82799B345007FE636 /* MQTTNIO in Frameworks */ = {isa = PBXBuildFile; productRef = 769AD5D72799B345007FE636 /* MQTTNIO */; };
+		769AD5DB2799B37F007FE636 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AD5DA2799B37F007FE636 /* ChatService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,7 @@
 		7635819E27971176005A5112 /* ChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		763581A527971176005A5112 /* ChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTests.swift; sourceTree = "<group>"; };
 		763581D527971732005A5112 /* ChatFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ChatFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		769AD5DA2799B37F007FE636 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				769AD5D82799B345007FE636 /* MQTTNIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +167,7 @@
 		2EAF684027971A7D00F7D082 /* ChatFramework */ = {
 			isa = PBXGroup;
 			children = (
+				769AD5D92799B367007FE636 /* Services */,
 				763581DF27972931005A5112 /* DataModels */,
 				2EAF684127971A7D00F7D082 /* ChatFramework.h */,
 			);
@@ -277,6 +282,14 @@
 			path = DataModels;
 			sourceTree = "<group>";
 		};
+		769AD5D92799B367007FE636 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				769AD5DA2799B37F007FE636 /* ChatService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -305,6 +318,9 @@
 			dependencies = (
 			);
 			name = ChatFramework;
+			packageProductDependencies = (
+				769AD5D72799B345007FE636 /* MQTTNIO */,
+			);
 			productName = ChatFramework;
 			productReference = 2EAF683F27971A7D00F7D082 /* ChatFramework.framework */;
 			productType = "com.apple.product-type.framework";
@@ -343,6 +359,8 @@
 				763581DB27971CD5005A5112 /* PBXTargetDependency */,
 			);
 			name = MqttChat;
+			packageProductDependencies = (
+			);
 			productName = MqttChat;
 			productReference = 7635815727970D62005A5112 /* MqttChat.app */;
 			productType = "com.apple.product-type.application";
@@ -444,6 +462,9 @@
 				Base,
 			);
 			mainGroup = 7635814E27970D62005A5112;
+			packageReferences = (
+				769AD5D42799B2DB007FE636 /* XCRemoteSwiftPackageReference "mqtt-nio" */,
+			);
 			productRefGroup = 7635815827970D62005A5112 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -512,6 +533,7 @@
 			files = (
 				763581DE27971EEB005A5112 /* BubblePosition.swift in Sources */,
 				763581DD27971EC2005A5112 /* ChatModel.swift in Sources */,
+				769AD5DB2799B37F007FE636 /* ChatService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1035,6 +1057,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		769AD5D42799B2DB007FE636 /* XCRemoteSwiftPackageReference "mqtt-nio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adam-fowler/mqtt-nio.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		769AD5D72799B345007FE636 /* MQTTNIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 769AD5D42799B2DB007FE636 /* XCRemoteSwiftPackageReference "mqtt-nio" */;
+			productName = MQTTNIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7635814F27970D62005A5112 /* Project object */;
 }

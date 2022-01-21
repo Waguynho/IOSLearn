@@ -9,7 +9,7 @@ import SwiftUI
 import ChatFramework
 
 struct Chat: View {
-    @ObservedObject var model = ChatModel("")
+    @ObservedObject var model = ChatModel()
     
     var body: some View {
         GeometryReader { geo in
@@ -35,10 +35,9 @@ struct Chat: View {
                     
                     Button("send") {
                         if model.text != "" {
-                            model.position = model.position == BubblePosition.right ? BubblePosition.left : BubblePosition.right
-                            model.arrayOfPositions.append(model.position)
-                            model.arrayOfMessages.append(model.text)
-                            model.text = ""
+
+                            model.sendMenssage(menssage: model.text)
+                            
                         }
                     }
                 }.padding()

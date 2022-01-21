@@ -89,11 +89,10 @@ public final class ChatService {
         let jsonEncoder = JSONEncoder()
         do {
             let jsonData = try jsonEncoder.encode(response)
-            let jsonString = String(data: jsonData, encoding: .utf8)
             
             client.publish(
                 to: myTopic,
-                payload: ByteBuffer(string: jsonString!),
+                payload: ByteBuffer(data: jsonData),
                 qos: .atLeastOnce
             ).whenComplete { result in
                 switch result {
@@ -108,9 +107,7 @@ public final class ChatService {
     }
     
     private func receiveMessage(buffer: ByteBuffer!) {
-        if let bytesBuffer = buffer.getBytes(at: 0, length: buffer.readableBytes) {
-            let jsonData = Data(bytes: bytesBuffer, count: bytesBuffer.count)
-            
+        if let jsonData = buffer.getData(at: 0, length: buffer.readableBytes) {
             do {
                 let jsonDecoder = JSONDecoder()
                 let response = try jsonDecoder.decode(Response.self, from: jsonData)

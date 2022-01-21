@@ -40,6 +40,7 @@ public final class ChatService {
                 print("Error subscribe: \(error)")
             }
         }
+        
         client.addPublishListener(named: "myListener") { result in
             switch result {
             case let .success(publish):

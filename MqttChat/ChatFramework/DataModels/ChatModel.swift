@@ -15,7 +15,7 @@ public final class ChatModel: ObservableObject {
     
     public init() {
         self.serviceMqtt.connect()
-        serviceMqtt.subscribe(topic: topicRequest)
+            //serviceMqtt.subscribe(topic: topicRequest)
         setReceiverMenssage()
     }
     
@@ -42,6 +42,7 @@ public final class ChatModel: ObservableObject {
     public func sendMenssage(menssage: String){
         setSenderMenssage(menssage)
         serviceMqtt.publish(topic: topicRequest, menssage: menssage)
+        text = ""
     }
     
 }

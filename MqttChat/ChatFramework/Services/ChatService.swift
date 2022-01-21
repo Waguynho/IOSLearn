@@ -23,6 +23,16 @@ public final class ChatService {
         client.connect().whenComplete { result in
             switch result {
             case .success:
+                self.client.addPublishListener(named: "myListener") { result in
+                    switch result {
+                    case .failure(let error):
+                        print("Error addPublishListener: \(error)")
+                    case .success(let publishInfo):
+                        if publishInfo.topicName == "chatModel/myTopic" {
+                            var msgReceived = publishInfo.payload
+                        }
+                    }
+                }
                 print("Connected success!")
             case let .failure(error):
                 print("Error connect: \(error)")
@@ -38,19 +48,6 @@ public final class ChatService {
                 print("Subscribed success!")
             case let .failure(error):
                 print("Error subscribe: \(error)")
-            }
-        }
-        
-        client.addPublishListener(named: "myListener") { result in
-            switch result {
-            case let .success(publish):
-                var buffer = publish.payload
-                let string = buffer.readString(length: buffer.readableBytes)
-                print(string)
-                self.messangeObservable.send(string!)
-                
-            case let .failure(error):
-                print("Error addPublishListener: \(error)")
             }
         }
     }

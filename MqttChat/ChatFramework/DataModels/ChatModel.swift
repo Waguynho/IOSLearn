@@ -7,7 +7,8 @@ public final class ChatModel: ObservableObject {
     private var serviceMqtt = ChatService()
     private var cancellable: Set<AnyCancellable> = .init()
     public var text = ""
-    let topicRequest = "chatModel/myTopic"
+    private var isScribe = false
+    let myTopic = "chatModel/myTopic"
     
     @Published public var arrayOfMessages : [String] = []
     @Published public var arrayOfPositions : [BubblePosition] = []
@@ -15,12 +16,11 @@ public final class ChatModel: ObservableObject {
     
     public init() {
         self.serviceMqtt.connect()
-            //serviceMqtt.subscribe(topic: topicRequest)
         setReceiverMenssage()
     }
     
     deinit {
-        serviceMqtt.unsubscribe(topic: topicRequest)
+        serviceMqtt.unsubscribe(topic: myTopic)
     }
     
     fileprivate func setSenderMenssage(_ menssage: String) {
@@ -40,8 +40,12 @@ public final class ChatModel: ObservableObject {
     }
     
     public func sendMenssage(menssage: String){
+        if !isScribe{
+            serviceMqtt.subscribe(topic: self.myTopic)
+        }
+        isScribe = true
         setSenderMenssage(menssage)
-        serviceMqtt.publish(topic: topicRequest, menssage: menssage)
+        serviceMqtt.publish(topic: myTopic, menssage: menssage)
         text = ""
     }
     

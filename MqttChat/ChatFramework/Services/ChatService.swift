@@ -5,6 +5,11 @@ import MQTTNIO
 import NIO
 import Combine
 
+struct Response: Codable {
+    let identifier: String
+    let message: String
+}
+
 public final class ChatService {
     
     private let identifier = UUID().uuidString
@@ -32,12 +37,8 @@ public final class ChatService {
             case .failure(let error):
                 print("Error addPublishListener: \(error)")
             case .success(let publishInfo):
-                if publishInfo.topicName == "chatModel/myTopic" {
-                    let msgReceived = publishInfo.payload
-                    self.receiveMessage(buffer: msgReceived)
-                    
-                    //self.callBack()
-                }
+                let msgReceived = publishInfo.payload
+                self.receiveMessage(buffer: msgReceived)
             }
         }
     }
@@ -79,27 +80,48 @@ public final class ChatService {
     }
     
     public func publish(menssage: String){
-        client.publish(
-            to: myTopic,
-            payload: ByteBuffer(string: menssage),
-            qos: .atLeastOnce
-        ).whenComplete { result in
-            switch result {
-            case .success:
-                print("Publish success!")
-            case let .failure(error):
-                print("Error publish: \(error)")
+        
+        let response = Response(
+            identifier: identifier,
+            message: menssage
+        )
+        
+        let jsonEncoder = JSONEncoder()
+        do {
+            let jsonData = try jsonEncoder.encode(response)
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            
+            client.publish(
+                to: myTopic,
+                payload: ByteBuffer(string: jsonString!),
+                qos: .atLeastOnce
+            ).whenComplete { result in
+                switch result {
+                case .success:
+                    print("Publish success!")
+                case let .failure(error):
+                    print("Error publish: \(error)")
+                }
             }
         }
+        catch {}
     }
     
     private func receiveMessage(buffer: ByteBuffer!) {
-        
-        var bytesBuffer = buffer.getBytes(at: 0, length: buffer.readableBytes)
-        
-        if let string = String(bytes: bytesBuffer!, encoding: .utf8) {
-            print(string)
-            messangeObservable.send(string)
+        if let bytesBuffer = buffer.getBytes(at: 0, length: buffer.readableBytes) {
+            let jsonData = Data(bytes: bytesBuffer, count: bytesBuffer.count)
+            
+            do {
+                let jsonDecoder = JSONDecoder()
+                let response = try jsonDecoder.decode(Response.self, from: jsonData)
+                
+                if response.identifier != identifier {
+                    messangeObservable.send(response.message)
+                }
+            }
+            catch {
+            }
+            
         } else {
             print("not a valid UTF-8 sequence")
         }

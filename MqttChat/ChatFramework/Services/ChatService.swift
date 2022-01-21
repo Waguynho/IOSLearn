@@ -7,38 +7,41 @@ import Combine
 
 public final class ChatService {
     
-    //private let callBack: (T) -> ()
+    
+    let myTopic = "chatModel/myTopic"
     
     let messangeObservable: PassthroughSubject<String, Never> = .init()
     
     let client = MQTTClient (
         host: "test.mosquitto.org",/*https://test.mosquitto.org,  https://www.hivemq.com, https://mqtt.eclipseprojects.io*/
         port: 1883,
-        identifier: "myClient",
+        identifier: UUID().uuidString,
         eventLoopGroupProvider: .createNew
     )
-//
-//    init(_ f: @escaping (T) -> ()) {
-//        self.callBack = f
-//    }
+
+    
+    fileprivate func AddListener() {
+        self.client.addPublishListener(named: "myListener") { result in
+            switch result {
+            case .failure(let error):
+                print("Error addPublishListener: \(error)")
+            case .success(let publishInfo):
+                if publishInfo.topicName == "chatModel/myTopic" {
+                    let msgReceived = publishInfo.payload
+                    self.receiveMessage(buffer: msgReceived)
+                    
+                    //self.callBack()
+                }
+            }
+        }
+    }
     
     public func connect(){
         client.connect().whenComplete { result in
             switch result {
             case .success:
-                self.client.addPublishListener(named: "myListener") { result in
-                    switch result {
-                    case .failure(let error):
-                        print("Error addPublishListener: \(error)")
-                    case .success(let publishInfo):
-                        if publishInfo.topicName == "chatModel/myTopic" {
-                            let msgReceived = publishInfo.payload
-                            self.receiveMessage(buffer: msgReceived)
-                            
-                            //self.callBack()
-                        }
-                    }
-                }
+                self.AddListener()
+                self.subscribe()
                 print("Connected success!")
             case let .failure(error):
                 print("Error connect: \(error)")
@@ -46,8 +49,8 @@ public final class ChatService {
         }
     }
     
-    public func subscribe(topic: String){
-        let subscription: MQTTSubscribeInfo = .init(topicFilter: topic, qos: .atLeastOnce)
+    public func subscribe(){
+        let subscription: MQTTSubscribeInfo = .init(topicFilter: myTopic, qos: .atLeastOnce)
         client.subscribe(to: [subscription]).whenComplete { result in
             switch result {
             case .success:
@@ -58,8 +61,8 @@ public final class ChatService {
         }
     }
     
-    public func unsubscribe(topic: String){
-        client.unsubscribe(from: [topic]).whenComplete { result in
+    public func unsubscribe(){
+        client.unsubscribe(from: [myTopic]).whenComplete { result in
             switch result {
             case .success:
                 print("Unsubscribe success!")
@@ -69,9 +72,9 @@ public final class ChatService {
         }
     }
     
-    public func publish(topic: String, menssage: String){
+    public func publish(menssage: String){
         client.publish(
-            to: topic,
+            to: myTopic,
             payload: ByteBuffer(string: menssage),
             qos: .atLeastOnce
         ).whenComplete { result in

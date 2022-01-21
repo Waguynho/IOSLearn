@@ -32,6 +32,8 @@ public final class ChatModel: ObservableObject {
     fileprivate func setReceiverMenssage() {
 
         serviceMqtt.messangeObservable.sink { menssage in
+            
+            
             self.position = .right
             self.arrayOfPositions.append(self.position)
             self.arrayOfMessages.append(menssage)
@@ -47,6 +49,10 @@ public final class ChatModel: ObservableObject {
         setSenderMenssage(menssage)
         serviceMqtt.publish(topic: myTopic, menssage: menssage)
         text = ""
+    }
+    
+    func executeCallBack(){
+        
     }
     
 }

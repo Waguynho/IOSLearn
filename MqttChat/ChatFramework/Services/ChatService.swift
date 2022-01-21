@@ -6,6 +6,9 @@ import NIO
 import Combine
 
 public final class ChatService {
+    
+    //private let callBack: (T) -> ()
+    
     let messangeObservable: PassthroughSubject<String, Never> = .init()
     
     let client = MQTTClient (
@@ -14,10 +17,10 @@ public final class ChatService {
         identifier: "myClient",
         eventLoopGroupProvider: .createNew
     )
-    
-    public init(){
-        
-    }
+//
+//    init(_ f: @escaping (T) -> ()) {
+//        self.callBack = f
+//    }
     
     public func connect(){
         client.connect().whenComplete { result in
@@ -31,6 +34,8 @@ public final class ChatService {
                         if publishInfo.topicName == "chatModel/myTopic" {
                             let msgReceived = publishInfo.payload
                             self.receiveMessage(buffer: msgReceived)
+                            
+                            //self.callBack()
                         }
                     }
                 }
@@ -85,6 +90,7 @@ public final class ChatService {
         
         if let string = String(bytes: bytesBuffer!, encoding: .utf8) {
             print(string)
+            messangeObservable.send(string)
         } else {
             print("not a valid UTF-8 sequence")
         }

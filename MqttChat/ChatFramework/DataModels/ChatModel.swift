@@ -16,6 +16,7 @@ public final class ChatModel: ObservableObject {
     public init() {
         self.serviceMqtt.connect()
         setReceiverMenssage()
+        
     }
     
     deinit {
@@ -29,16 +30,9 @@ public final class ChatModel: ObservableObject {
     }
     
     fileprivate func setReceiverMenssage() {
-        
         serviceMqtt.messangeObservable
             .subscribe(on: DispatchQueue.main)
-            .sink { menssage in
-                self.position = .right
-                self.arrayOfPositions.append(self.position)
-                
-                
-                self.arrayOfMessages.append(menssage)
-            }
+            .sink(receiveValue: executeCallBack)
             .store(in: &cancellable)
     }
     
@@ -49,8 +43,10 @@ public final class ChatModel: ObservableObject {
         text = ""
     }
     
-    func executeCallBack(){
-        
+    func executeCallBack(_ msg: String){
+        self.position = .right
+        self.arrayOfPositions.append(self.position)
+        self.arrayOfMessages.append(msg)
     }
     
 }

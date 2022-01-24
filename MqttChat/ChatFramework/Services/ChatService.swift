@@ -26,54 +26,66 @@ public final class ChatService {
         self.client = client
     }
 
-    fileprivate func AddListener() {
+    fileprivate func addListener(
+        postListener: @escaping (String) -> Void?
+    ) {
         self.client.addPublishListener(named: "myListener") { result in
             switch result {
             case .failure(let error):
                 print("Error addPublishListener: \(error)")
+                postListener("Error addPublishListener: \(error)")
             case .success(let publishInfo):
                 let msgReceived = publishInfo.payload
                 self.receiveMessage(buffer: msgReceived)
+                postListener("Add listener sucess!")
             }
         }
     }
     
     public func connect(
-        callback: @escaping (String) -> Void
+        postConnect: @escaping (String) -> Void, postListener : @escaping (String) -> Void?, postSubscribe : @escaping (String) -> Void?
     ) {
         client.connect().whenComplete { result in
             switch result {
             case .success:
-                self.AddListener()
-                self.subscribe()
+                self.addListener(postListener: postListener)
+                self.subscribe(postSubscribe: postSubscribe)
                 print("Connected success!")
-                callback("Connected success!")
+                postConnect("Connected success!")
             case let .failure(error):
                 print("Error connect: \(error)")
-                callback("Error connect: \(error)")
+                postConnect("Error connect: \(error)")
             }
         }
     }
     
-    public func subscribe(){
+    public func subscribe(
+        postSubscribe : @escaping (String) -> Void?
+    ){
         let subscription: MQTTSubscribeInfo = .init(topicFilter: myTopic, qos: .atLeastOnce)
         client.subscribe(to: [subscription]).whenComplete { result in
             switch result {
             case .success:
                 print("Subscribed success!")
+                postSubscribe("Subscribed success!")
             case let .failure(error):
                 print("Error subscribe: \(error)")
+                postSubscribe("Error subscribe: \(error)")
             }
         }
     }
     
-    public func unsubscribe(){
+    public func unsubscribe(
+        _ postUnsubscribe: @escaping (String) -> Void?
+    ){
         client.unsubscribe(from: [myTopic]).whenComplete { result in
             switch result {
             case .success:
                 print("Unsubscribe success!")
+                postUnsubscribe("Unsubscribe success!")
             case let .failure(error):
                 print("Error unsubscribe: \(error)")
+                postUnsubscribe("Error unsubscribe: \(error)")
             }
         }
     }

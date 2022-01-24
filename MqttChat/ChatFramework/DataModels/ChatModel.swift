@@ -1,6 +1,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 public final class ChatModel: ObservableObject {
     
@@ -14,15 +15,26 @@ public final class ChatModel: ObservableObject {
     @Published public var position = BubblePosition.right
     
     public init() {
-        self.serviceMqtt.connect { value  in
-            print("callback: \(value)")
-        }
+        self.serviceMqtt.connect(
+            postConnect: { textConnect in
+                print("textConnect: \(textConnect)")
+            }
+            ,postListener: { textListener in
+                print("textListener: \(textListener)")
+            }
+            ,postSubscribe: { textSubscribe in
+                print("textSubscribe: \(textSubscribe)")
+            }
+        )
+        
         setReceiverMenssage()
         
     }
     
     deinit {
-        serviceMqtt.unsubscribe()
+        serviceMqtt.unsubscribe { value in
+            print("Unsubscribe sucess \(value)")
+        }
     }
     
     fileprivate func setSenderMenssage(_ menssage: String) {

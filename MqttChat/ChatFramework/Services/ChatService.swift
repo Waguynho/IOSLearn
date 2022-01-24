@@ -4,6 +4,8 @@ import Foundation
 import MQTTNIO
 import NIO
 import Combine
+import NIOCore
+import UIKit
 
 struct Response: Codable {
     let identifier: String
@@ -12,7 +14,6 @@ struct Response: Codable {
 
 public final class ChatService {
     
-    private let identifier = UUID().uuidString
     
     private let myTopic = "chatModel/myTopic"
     
@@ -20,17 +21,11 @@ public final class ChatService {
     
     let client: MQTTClient
     
-    init(){
+    init(client: MQTTClient = .live ){
         
-        client = MQTTClient (
-            host: "test.mosquitto.org",/*https://test.mosquitto.org,  https://www.hivemq.com, https://mqtt.eclipseprojects.io*/
-            port: 1883,
-            identifier: identifier,
-            eventLoopGroupProvider: .createNew
-        )
+        self.client = client
     }
 
-    
     fileprivate func AddListener() {
         self.client.addPublishListener(named: "myListener") { result in
             switch result {
@@ -43,15 +38,19 @@ public final class ChatService {
         }
     }
     
-    public func connect(){
+    public func connect(
+        callback: @escaping (String) -> Void
+    ) {
         client.connect().whenComplete { result in
             switch result {
             case .success:
                 self.AddListener()
                 self.subscribe()
                 print("Connected success!")
+                callback("Connected success!")
             case let .failure(error):
                 print("Error connect: \(error)")
+                callback("Error connect: \(error)")
             }
         }
     }
@@ -82,7 +81,7 @@ public final class ChatService {
     public func publish(menssage: String){
         
         let response = Response(
-            identifier: identifier,
+            identifier: MQTTClient.identifier,
             message: menssage
         )
         
@@ -112,7 +111,7 @@ public final class ChatService {
                 let jsonDecoder = JSONDecoder()
                 let response = try jsonDecoder.decode(Response.self, from: jsonData)
                 
-                if response.identifier != identifier {
+                if response.identifier != MQTTClient.identifier {
                     messangeObservable.send(response.message)
                 }
             }
@@ -122,5 +121,35 @@ public final class ChatService {
         } else {
             print("not a valid UTF-8 sequence")
         }
+    }
+}
+
+extension MQTTClient {
+    
+    static let identifier = UUID().uuidString
+    
+    static var live: MQTTClient {
+        .init(
+            host: "test.mosquitto.org",/*https://test.mosquitto.org,  https://www.hivemq.com, https://mqtt.eclipseprojects.io*/
+            port: 1883,
+            identifier: identifier,
+            eventLoopGroupProvider: .createNew
+            
+        )
+    }
+    
+    static func mock(
+        host: String = "test.mosquitto.org",
+        port: Int = 1883,
+        identifier: String = UUID().uuidString,
+        eventLoopGroupProvider: NIOEventLoopGroupProvider = .createNew
+        
+    ) -> MQTTClient {
+        .init(
+            host: host,
+            port: port,
+            identifier: identifier,
+            eventLoopGroupProvider: eventLoopGroupProvider
+        )
     }
 }

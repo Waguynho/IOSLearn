@@ -14,7 +14,9 @@ public final class ChatModel: ObservableObject {
     @Published public var position = BubblePosition.right
     
     public init() {
-        self.serviceMqtt.connect()
+        self.serviceMqtt.connect { value  in
+            print("callback: \(value)")
+        }
         setReceiverMenssage()
         
     }

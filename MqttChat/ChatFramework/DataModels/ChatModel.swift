@@ -44,9 +44,11 @@ public final class ChatModel: ObservableObject {
     }
     
     func executeCallBack(_ msg: String){
-        self.position = .right
-        self.arrayOfPositions.append(self.position)
-        self.arrayOfMessages.append(msg)
+        DispatchQueue.main.async {
+            self.position = .right
+            self.arrayOfPositions.append(self.position)
+            self.arrayOfMessages.append(msg)
+        }
     }
     
 }

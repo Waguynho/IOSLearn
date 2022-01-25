@@ -12,16 +12,16 @@ struct Response: Codable {
     let message: String
 }
 
-public final class ChatService {
-    
+public struct ChatService {
     
     private let myTopic = "chatModel/myTopic"
     
     let messangeObservable: PassthroughSubject<String, Never> = .init()
     
     let client: MQTTClient
+    let identifier = UUID().uuidString
     
-    init(client: MQTTClient = .live ) {
+    init(client: MQTTClient = .live()) {
         self.client = client
     }
     
@@ -40,14 +40,19 @@ public final class ChatService {
         }
     }
     
-    public func addListener() {
-        client.addPublishListener(named: "myListener") { result in
+    public func addListener(
+        calback: @escaping (String) -> Void = { _ in }
+    ) {
+        client.addPublishListener(named: "myListener-\(identifier)") { result in
             switch result {
             case .failure(let error):
                 print("Error addPublishListener: \(error)")
+                calback("Error addPublishListener: \(error)")
+                
             case .success(let publishInfo):
                 let msgReceived = publishInfo.payload
                 self.receiveMessage(buffer: msgReceived)
+                calback("Add listener sucess!")
             }
         }
     }
@@ -88,7 +93,7 @@ public final class ChatService {
     public func publish(menssage: String) {
         
         let response = Response(
-            identifier: MQTTClient.identifier,
+            identifier: identifier,
             message: menssage
         )
         
@@ -118,7 +123,7 @@ public final class ChatService {
                 let jsonDecoder = JSONDecoder()
                 let response = try jsonDecoder.decode(Response.self, from: jsonData)
                 
-                if response.identifier != MQTTClient.identifier {
+                if response.identifier != identifier {
                     messangeObservable.send(response.message)
                 }
             }
@@ -133,9 +138,7 @@ public final class ChatService {
 
 extension MQTTClient {
     
-    static let identifier = UUID().uuidString
-    
-    static var live: MQTTClient {
+    static func live(identifier: String = UUID().uuidString) -> MQTTClient {
         .init(
             host: "test.mosquitto.org",/*https://test.mosquitto.org,  https://www.hivemq.com, https://mqtt.eclipseprojects.io*/
             port: 1883,
@@ -150,7 +153,6 @@ extension MQTTClient {
         port: Int = 1883,
         identifier: String = UUID().uuidString,
         eventLoopGroupProvider: NIOEventLoopGroupProvider = .createNew
-        
     ) -> MQTTClient {
         .init(
             host: host,

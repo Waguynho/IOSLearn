@@ -1,31 +1,57 @@
 
 import XCTest
+import Combine
 @testable import ChatFramework
 
-class ChatFrameworkTests: XCTestCase {
+final class ChatFrameworkTests: XCTestCase {
     
     func test_integration() async throws {
         
-        let sut: Sut = .init(client: .mock())
+        let server: Sut = .init(client: .mock(identifier: UUID().uuidString))
+        let client: Sut = .init(client: .mock(identifier: UUID().uuidString))
+        
+        var cancellable = Set<AnyCancellable>()
+        var valueMessage: String = ""
         
         let exp = expectation(description: "Should call connect")
-        exp.expectedFulfillmentCount = 2
+        exp.expectedFulfillmentCount = 5
         
-        let isConnected = try await sut.connect()
+        let isServerConnected = try await server.connect()
+        let isClientConnected = try await client.connect()
         exp.fulfill()
         
-        let value = try await sut.subscribe()
+        let valueServer = try await server.subscribe()
+        let valueClient = try await client.subscribe()
         exp.fulfill()
         
-//        sut.addListener(postListener: { value in
-//            XCTAssertEqual(value, "Add listener sucess!")
-//            exp.fulfill()
-//        })
+        server.addListener(calback: { value in
+            XCTAssertEqual(value, "Add listener sucess!")
+            exp.fulfill()
+        })
+        
+        client.addListener(calback: { value in
+            XCTAssertEqual(value, "Add listener sucess!")
+            exp.fulfill()
+        })
+        
+        client.messangeObservable
+            .sink { value in
+                valueMessage = value
+                exp.fulfill()
+            }
+            .store(in: &cancellable)
+        
+        server.publish(menssage: "Teste message")
 
-        await waitForExpectations(timeout: 10)
+        await waitForExpectations(timeout: 3)
         
-        XCTAssertTrue(isConnected)
-        XCTAssertEqual(value, "Subscribed success!")
+        XCTAssertTrue(isServerConnected)
+        XCTAssertTrue(isClientConnected)
+        
+        XCTAssertEqual(valueServer, "Subscribed success!")
+        XCTAssertEqual(valueClient, "Subscribed success!")
+        
+        XCTAssertEqual(valueMessage, "Teste message")
     }
 }
 

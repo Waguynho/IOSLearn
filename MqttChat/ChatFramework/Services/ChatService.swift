@@ -26,8 +26,8 @@ public final class ChatService {
         self.client = client
     }
 
-    fileprivate func addListener(
-        postListener: @escaping (String) -> Void?
+    public func addListener(
+        postListener: @escaping (String) -> Void
     ) {
         self.client.addPublishListener(named: "myListener") { result in
             switch result {
@@ -43,13 +43,11 @@ public final class ChatService {
     }
     
     public func connect(
-        postConnect: @escaping (String) -> Void, postListener : @escaping (String) -> Void?, postSubscribe : @escaping (String) -> Void?
+        postConnect: @escaping (String) -> Void
     ) {
         client.connect().whenComplete { result in
             switch result {
             case .success:
-                self.addListener(postListener: postListener)
-                self.subscribe(postSubscribe: postSubscribe)
                 print("Connected success!")
                 postConnect("Connected success!")
             case let .failure(error):
@@ -57,10 +55,11 @@ public final class ChatService {
                 postConnect("Error connect: \(error)")
             }
         }
+
     }
     
     public func subscribe(
-        postSubscribe : @escaping (String) -> Void?
+        postSubscribe : @escaping (String) -> Void
     ){
         let subscription: MQTTSubscribeInfo = .init(topicFilter: myTopic, qos: .atLeastOnce)
         client.subscribe(to: [subscription]).whenComplete { result in
@@ -70,7 +69,7 @@ public final class ChatService {
                 postSubscribe("Subscribed success!")
             case let .failure(error):
                 print("Error subscribe: \(error)")
-                postSubscribe("Error subscribe: \(error)")
+               // postSubscribe("Error subscribe: \(error)")
             }
         }
     }

@@ -19,12 +19,6 @@ public final class ChatModel: ObservableObject {
             postConnect: { textConnect in
                 print("textConnect: \(textConnect)")
             }
-            ,postListener: { textListener in
-                print("textListener: \(textListener)")
-            }
-            ,postSubscribe: { textSubscribe in
-                print("textSubscribe: \(textSubscribe)")
-            }
         )
         
         setReceiverMenssage()

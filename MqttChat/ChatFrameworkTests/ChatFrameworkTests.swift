@@ -41,9 +41,9 @@ final class ChatFrameworkTests: XCTestCase {
             }
             .store(in: &cancellable)
         
-        server.publish(menssage: "Teste message")
+        server.publish(menssage: "Test menssage from server")
 
-        await waitForExpectations(timeout: 3)
+        await waitForExpectations(timeout: 30)
         
         XCTAssertTrue(isServerConnected)
         XCTAssertTrue(isClientConnected)
@@ -51,7 +51,7 @@ final class ChatFrameworkTests: XCTestCase {
         XCTAssertEqual(valueServer, "Subscribed success!")
         XCTAssertEqual(valueClient, "Subscribed success!")
         
-        XCTAssertEqual(valueMessage, "Teste message")
+        XCTAssertEqual(valueMessage, "Test menssage from server")
     }
 }
 

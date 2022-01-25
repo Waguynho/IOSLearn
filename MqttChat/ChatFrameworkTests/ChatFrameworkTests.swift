@@ -4,32 +4,28 @@ import XCTest
 
 class ChatFrameworkTests: XCTestCase {
     
-    func test_integration() throws {
+    func test_integration() async throws {
         
         let sut: Sut = .init(client: .mock())
         
         let exp = expectation(description: "Should call connect")
+        exp.expectedFulfillmentCount = 2
         
-        sut.connect(
-            postConnect: { value in
-                XCTAssertEqual(value, "Connected success!")
-                exp.fulfill()
-                
-                sut.subscribe(postSubscribe: { value in
-                   // XCTAssertEqual(value, "Subscribed success!")
-                    exp.fulfill()
-                })
-            }
-        )
+        let isConnected = try await sut.connect()
+        exp.fulfill()
+        
+        let value = try await sut.subscribe()
+        exp.fulfill()
         
 //        sut.addListener(postListener: { value in
 //            XCTAssertEqual(value, "Add listener sucess!")
 //            exp.fulfill()
 //        })
-//
 
-
-        waitForExpectations(timeout: 10)
+        await waitForExpectations(timeout: 10)
+        
+        XCTAssertTrue(isConnected)
+        XCTAssertEqual(value, "Subscribed success!")
     }
 }
 

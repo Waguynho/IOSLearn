@@ -15,14 +15,13 @@ public final class ChatModel: ObservableObject {
     @Published public var position = BubblePosition.right
     
     public init() {
-        self.serviceMqtt.connect(
-            postConnect: { textConnect in
-                print("textConnect: \(textConnect)")
-            }
-        )
+        Task {
+            _ = try await serviceMqtt.connect()
+            _ = try await serviceMqtt.subscribe()
+            serviceMqtt.addListener()
+        }
         
         setReceiverMenssage()
-        
     }
     
     deinit {
@@ -45,9 +44,8 @@ public final class ChatModel: ObservableObject {
     }
     
     public func sendMenssage(menssage: String){
-        
         setSenderMenssage(menssage)
-        serviceMqtt.publish (menssage: menssage)
+        serviceMqtt.publish(menssage: menssage)
         text = ""
     }
     

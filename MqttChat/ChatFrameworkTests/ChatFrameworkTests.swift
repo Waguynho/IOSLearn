@@ -10,9 +10,6 @@ final class ChatFrameworkTests: XCTestCase {
         let server: Sut = .init(client: .mock(identifier: UUID().uuidString))
         let client: Sut = .init(client: .mock(identifier: UUID().uuidString))
         
-        var cancellable = Set<AnyCancellable>()
-        var valueMessage: String = ""
-        
         let exp = expectation(description: "Should call connect")
         exp.expectedFulfillmentCount = 5
         
@@ -33,6 +30,9 @@ final class ChatFrameworkTests: XCTestCase {
             XCTAssertEqual(value, "Add listener sucess!")
             exp.fulfill()
         })
+        
+        var cancellable = Set<AnyCancellable>()
+        var valueMessage: String = ""
         
         client.messangeObservable
             .sink { value in

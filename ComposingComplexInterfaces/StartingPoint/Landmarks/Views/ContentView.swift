@@ -29,6 +29,12 @@ struct ContentView: View {
                     Label("List", systemImage: "list.bullet")
                 }
                 .tag(Tab.list)
+            
+            Badge()
+                .tabItem {
+                    Label("Badge", systemImage: "circlebadge.2.fill")
+                }
+                .tag(Tab.featured)
         }
     }
 }

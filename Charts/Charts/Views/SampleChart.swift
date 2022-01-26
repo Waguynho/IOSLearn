@@ -17,7 +17,8 @@ struct SampleChart: View {
             title: "Balanço",
             legend: "Meses",
             style: Styles.barChartMidnightGreenLight,
-            form: CGSize(width: 300, height: 500),
+            form: CGSize(width: 360, height: 600),
+            dropShadow: true,
             animatedToBack: true
         )
     }

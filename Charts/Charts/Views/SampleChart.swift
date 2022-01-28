@@ -3,26 +3,24 @@ import SwiftUI
 
 struct SampleChart: View {
     
-    @State var data = ChartData(values: [
-            ("Janeiro",2200),
-            ("Fevereiro",550),
-            ("Março",3000),
-            ("Abril",5400)
-    ])
+
     
     let chartStyle = ChartStyle(backgroundColor: Color.green, accentColor: Colors.OrangeStart, secondGradientColor: Colors.OrangeEnd, textColor: Color.white,legendTextColor: Color.yellow, dropShadowColor: .pink )
 
+    var lines =  LineChartView(data: [8,23,54,32,12,37,7,23,43], title: "Frequency", legend: "Days")
     
     var body: some View {
         
-        BarChartView(
-            data: data,
-            title: "Balanço",
-            legend: "Meses",
-            style: chartStyle,
-            form: CGSize(width: 300, height: 550),
-            animatedToBack: true
-        )
+        VStack {
+            Spacer(minLength: 1)
+            LineChartView(data: [8,23,54,32,12,37,7,23,43], title: "Frequency", legend: "Days")
+            Spacer(minLength: 1)
+            PieChartView(data: [8,23,54,32], title: "Issues", legend: "by product")
+            Spacer(minLength: 1)
+        }
+        
+        
+            
     }
 }
 

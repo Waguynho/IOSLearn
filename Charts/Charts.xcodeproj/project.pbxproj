@@ -11,6 +11,8 @@
 		761392F327A1D13E0069D047 /* GenderChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761392F227A1D13E0069D047 /* GenderChart.swift */; };
 		761392F527A1D1880069D047 /* PersonDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761392F427A1D1880069D047 /* PersonDao.swift */; };
 		767BDC2B27A2F9FB004F6891 /* GenderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767BDC2A27A2F9FB004F6891 /* GenderConfig.swift */; };
+		76A5387727A41E7C00FA9310 /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A5387627A41E7C00FA9310 /* DashBoardView.swift */; };
+		76A5387927A427B500FA9310 /* DashBoardConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A5387827A427B500FA9310 /* DashBoardConfig.swift */; };
 		76C30A0C27A1A0A300E2166D /* ChartsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C30A0B27A1A0A300E2166D /* ChartsApp.swift */; };
 		76C30A0E27A1A0A300E2166D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C30A0D27A1A0A300E2166D /* ContentView.swift */; };
 		76C30A1027A1A0B300E2166D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76C30A0F27A1A0B300E2166D /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		761392F227A1D13E0069D047 /* GenderChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderChart.swift; sourceTree = "<group>"; };
 		761392F427A1D1880069D047 /* PersonDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDao.swift; sourceTree = "<group>"; };
 		767BDC2A27A2F9FB004F6891 /* GenderConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderConfig.swift; sourceTree = "<group>"; };
+		76A5387627A41E7C00FA9310 /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
+		76A5387827A427B500FA9310 /* DashBoardConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardConfig.swift; sourceTree = "<group>"; };
 		76C30A0827A1A0A300E2166D /* Charts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C30A0B27A1A0A300E2166D /* ChartsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsApp.swift; sourceTree = "<group>"; };
 		76C30A0D27A1A0A300E2166D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +96,15 @@
 				767BDC2A27A2F9FB004F6891 /* GenderConfig.swift */,
 			);
 			path = Genders;
+			sourceTree = "<group>";
+		};
+		76A5387527A41E5F00FA9310 /* DashBoard */ = {
+			isa = PBXGroup;
+			children = (
+				76A5387627A41E7C00FA9310 /* DashBoardView.swift */,
+				76A5387827A427B500FA9310 /* DashBoardConfig.swift */,
+			);
+			path = DashBoard;
 			sourceTree = "<group>";
 		};
 		76C309FF27A1A0A200E2166D = {
@@ -165,6 +178,7 @@
 		76C30A3927A1A53500E2166D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				76A5387527A41E5F00FA9310 /* DashBoard */,
 				767BDC2927A2F9D3004F6891 /* Genders */,
 				76C30A3B27A1A55900E2166D /* SampleChart.swift */,
 			);
@@ -329,7 +343,9 @@
 				761392F527A1D1880069D047 /* PersonDao.swift in Sources */,
 				76C30A0E27A1A0A300E2166D /* ContentView.swift in Sources */,
 				76C30A0C27A1A0A300E2166D /* ChartsApp.swift in Sources */,
+				76A5387727A41E7C00FA9310 /* DashBoardView.swift in Sources */,
 				761392F127A1CFC20069D047 /* Person.swift in Sources */,
+				76A5387927A427B500FA9310 /* DashBoardConfig.swift in Sources */,
 				76C30A3C27A1A55900E2166D /* SampleChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

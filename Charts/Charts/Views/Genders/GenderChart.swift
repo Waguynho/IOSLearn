@@ -21,7 +21,7 @@ struct GenderChart: View {
                 title: "Gender",
                 legend: "Count",
                 style: isDarkMode ? Styles.barChartStyleOrangeDark : Styles.barChartStyleNeonBlueLight,
-                form: CGSize(width: 300, height: 500),
+                form: CGSize(width: 300, height: 468),
                 dropShadow: true,
                 animatedToBack: true
             )

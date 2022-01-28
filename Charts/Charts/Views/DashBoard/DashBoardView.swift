@@ -5,7 +5,7 @@ import SwiftUI
 struct DashBoardView: View {
     
     @State public var isMultipleCharts: Bool = true
-    
+    @State public var opt: String = ""
     var body: some View {
         
         NavigationView {
@@ -17,7 +17,7 @@ struct DashBoardView: View {
                         .bold()
                         .font(.largeTitle)
                     
-                    NavigationLink(destination: DashBoardConfig(enableMultipleCharts: $isMultipleCharts)) {
+                    NavigationLink(destination: DashBoardConfig(enableMultipleCharts: $isMultipleCharts, opt: $opt)) {
                         Image(systemName: "pencil.circle.fill")
                             .font(.title3)
                     }
@@ -25,9 +25,9 @@ struct DashBoardView: View {
                 .padding(.top, -25)
                 
                 if isMultipleCharts {
-                    GenderChart()
+                    MultipleCharts()
                 }else{
-                    SampleChart()
+                    GenderChart()
                 }
                 
             }

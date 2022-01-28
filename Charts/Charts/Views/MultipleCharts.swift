@@ -1,7 +1,7 @@
 import SwiftUICharts
 import SwiftUI
 
-struct SampleChart: View {
+struct MultipleCharts: View {
     
 
     
@@ -26,6 +26,6 @@ struct SampleChart: View {
 
 struct SampleChart_Previews: PreviewProvider {
     static var previews: some View {
-        SampleChart()
+        MultipleCharts()
     }
 }

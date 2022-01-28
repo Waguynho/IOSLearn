@@ -14,4 +14,5 @@ public class Person {
 public enum Gender {
      case male
      case female
+     case unown
  }

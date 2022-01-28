@@ -10,15 +10,17 @@ struct SampleChart: View {
             ("Abril",5400)
     ])
     
+    let chartStyle = ChartStyle(backgroundColor: Color.green, accentColor: Colors.OrangeStart, secondGradientColor: Colors.OrangeEnd, textColor: Color.white,legendTextColor: Color.yellow, dropShadowColor: .pink )
+
+    
     var body: some View {
         
         BarChartView(
             data: data,
             title: "Balanço",
             legend: "Meses",
-            style: Styles.barChartMidnightGreenLight,
-            form: CGSize(width: 360, height: 600),
-            dropShadow: true,
+            style: chartStyle,
+            form: CGSize(width: 300, height: 550),
             animatedToBack: true
         )
     }

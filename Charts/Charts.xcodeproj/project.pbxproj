@@ -10,6 +10,7 @@
 		761392F127A1CFC20069D047 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761392F027A1CFC20069D047 /* Person.swift */; };
 		761392F327A1D13E0069D047 /* GenderChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761392F227A1D13E0069D047 /* GenderChart.swift */; };
 		761392F527A1D1880069D047 /* PersonDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761392F427A1D1880069D047 /* PersonDao.swift */; };
+		767BDC2B27A2F9FB004F6891 /* GenderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767BDC2A27A2F9FB004F6891 /* GenderConfig.swift */; };
 		76C30A0C27A1A0A300E2166D /* ChartsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C30A0B27A1A0A300E2166D /* ChartsApp.swift */; };
 		76C30A0E27A1A0A300E2166D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C30A0D27A1A0A300E2166D /* ContentView.swift */; };
 		76C30A1027A1A0B300E2166D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76C30A0F27A1A0B300E2166D /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 		76C30A2927A1A0B500E2166D /* ChartsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C30A2827A1A0B500E2166D /* ChartsUITestsLaunchTests.swift */; };
 		76C30A3727A1A15B00E2166D /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 76C30A3627A1A15B00E2166D /* SwiftUICharts */; };
 		76C30A3C27A1A55900E2166D /* SampleChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C30A3B27A1A55900E2166D /* SampleChart.swift */; };
+		76D2ABC027A3317B00DAA7DE /* GenderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D2ABBF27A3317B00DAA7DE /* GenderController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,7 @@
 		761392F027A1CFC20069D047 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		761392F227A1D13E0069D047 /* GenderChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderChart.swift; sourceTree = "<group>"; };
 		761392F427A1D1880069D047 /* PersonDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDao.swift; sourceTree = "<group>"; };
+		767BDC2A27A2F9FB004F6891 /* GenderConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderConfig.swift; sourceTree = "<group>"; };
 		76C30A0827A1A0A300E2166D /* Charts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C30A0B27A1A0A300E2166D /* ChartsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsApp.swift; sourceTree = "<group>"; };
 		76C30A0D27A1A0A300E2166D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		76C30A2627A1A0B500E2166D /* ChartsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsUITests.swift; sourceTree = "<group>"; };
 		76C30A2827A1A0B500E2166D /* ChartsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		76C30A3B27A1A55900E2166D /* SampleChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleChart.swift; sourceTree = "<group>"; };
+		76D2ABBF27A3317B00DAA7DE /* GenderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		767BDC2927A2F9D3004F6891 /* Genders */ = {
+			isa = PBXGroup;
+			children = (
+				761392F227A1D13E0069D047 /* GenderChart.swift */,
+				767BDC2A27A2F9FB004F6891 /* GenderConfig.swift */,
+			);
+			path = Genders;
+			sourceTree = "<group>";
+		};
 		76C309FF27A1A0A200E2166D = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +117,7 @@
 		76C30A0A27A1A0A300E2166D /* Charts */ = {
 			isa = PBXGroup;
 			children = (
+				76D2ABBE27A3316800DAA7DE /* Controllers */,
 				76C30A3A27A1A53F00E2166D /* Dao */,
 				76C30A3927A1A53500E2166D /* Views */,
 				76C30A3827A1A52600E2166D /* Models */,
@@ -151,8 +165,8 @@
 		76C30A3927A1A53500E2166D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				767BDC2927A2F9D3004F6891 /* Genders */,
 				76C30A3B27A1A55900E2166D /* SampleChart.swift */,
-				761392F227A1D13E0069D047 /* GenderChart.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,6 +177,14 @@
 				761392F427A1D1880069D047 /* PersonDao.swift */,
 			);
 			path = Dao;
+			sourceTree = "<group>";
+		};
+		76D2ABBE27A3316800DAA7DE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				76D2ABBF27A3317B00DAA7DE /* GenderController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,7 +323,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				767BDC2B27A2F9FB004F6891 /* GenderConfig.swift in Sources */,
 				761392F327A1D13E0069D047 /* GenderChart.swift in Sources */,
+				76D2ABC027A3317B00DAA7DE /* GenderController.swift in Sources */,
 				761392F527A1D1880069D047 /* PersonDao.swift in Sources */,
 				76C30A0E27A1A0A300E2166D /* ContentView.swift in Sources */,
 				76C30A0C27A1A0A300E2166D /* ChartsApp.swift in Sources */,

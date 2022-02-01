@@ -34,7 +34,7 @@ struct GenderController {
     
 }
 
-enum TypeChart{
+public enum TypeChart{
     case Amount
     case Percentage
 }

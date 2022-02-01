@@ -13,6 +13,7 @@
 		767BDC2B27A2F9FB004F6891 /* GenderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767BDC2A27A2F9FB004F6891 /* GenderConfig.swift */; };
 		76A5387727A41E7C00FA9310 /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A5387627A41E7C00FA9310 /* DashBoardView.swift */; };
 		76A5387927A427B500FA9310 /* DashBoardConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A5387827A427B500FA9310 /* DashBoardConfig.swift */; };
+		76A5387B27A466E000FA9310 /* GenderControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A5387A27A466E000FA9310 /* GenderControllerTests.swift */; };
 		76C30A0C27A1A0A300E2166D /* ChartsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C30A0B27A1A0A300E2166D /* ChartsApp.swift */; };
 		76C30A0E27A1A0A300E2166D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C30A0D27A1A0A300E2166D /* ContentView.swift */; };
 		76C30A1027A1A0B300E2166D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76C30A0F27A1A0B300E2166D /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		767BDC2A27A2F9FB004F6891 /* GenderConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderConfig.swift; sourceTree = "<group>"; };
 		76A5387627A41E7C00FA9310 /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
 		76A5387827A427B500FA9310 /* DashBoardConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardConfig.swift; sourceTree = "<group>"; };
+		76A5387A27A466E000FA9310 /* GenderControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderControllerTests.swift; sourceTree = "<group>"; };
 		76C30A0827A1A0A300E2166D /* Charts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C30A0B27A1A0A300E2166D /* ChartsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsApp.swift; sourceTree = "<group>"; };
 		76C30A0D27A1A0A300E2166D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				76C30A1C27A1A0B400E2166D /* PersonDaoTests.swift */,
+				76A5387A27A466E000FA9310 /* GenderControllerTests.swift */,
 			);
 			path = ChartsTests;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				76A5387D27A4682900FA9310 /* PBXTargetDependency */,
 				76C30A1A27A1A0B400E2166D /* PBXTargetDependency */,
 			);
 			name = ChartsTests;
@@ -354,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76A5387B27A466E000FA9310 /* GenderControllerTests.swift in Sources */,
 				76C30A1D27A1A0B400E2166D /* PersonDaoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +375,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		76A5387D27A4682900FA9310 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 76A5387C27A4682900FA9310 /* SwiftUICharts */;
+		};
 		76C30A1A27A1A0B400E2166D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 76C30A0727A1A0A300E2166D /* Charts */;
@@ -680,6 +689,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		76A5387C27A4682900FA9310 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76C30A3527A1A15B00E2166D /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
 		76C30A3627A1A15B00E2166D /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 76C30A3527A1A15B00E2166D /* XCRemoteSwiftPackageReference "ChartView" */;

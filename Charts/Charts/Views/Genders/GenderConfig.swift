@@ -39,13 +39,13 @@ struct GenderConfig: View {
     }
 }
 
-//struct GenderConfig_Previews: PreviewProvider {
-//
-//    @State  var darkMode2: Bool = false
-//
-//    static var previews: some View {
-//
-//        GenderConfig(isDarkMode: $darkMode2)
-//
-//    }
-//}
+struct GenderConfig_Previews: PreviewProvider {
+
+    @State  var darkMode2: Bool = false
+
+    static var previews: some View {
+
+        GenderConfig(enablePercentage: .constant(false), enableDarkMode: .constant(true))
+
+    }
+}

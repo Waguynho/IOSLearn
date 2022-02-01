@@ -23,21 +23,22 @@ struct DashBoardConfig: View {
             Picker("Seasonal Photo", selection: $opt) {
                 
                 Image(systemName: "chart.line.uptrend.xyaxis")
-                    .tag("line")
+                    .tag("tag-line")
                     .font(.largeTitle)
                     .foregroundColor(.green)
                     .symbolRenderingMode(.monochrome)
 
                 Image(systemName: "chart.bar.xaxis")
-                    .tag("bar")
+                    .tag("tag-bars")
                     .font(.custom("", size: 55))
                     .foregroundColor(.orange)
                     .symbolRenderingMode(.multicolor)
                 
-                Text("chart.line.uptrend.xyaxis")
-                    .tag("tag 3")
-                    .foregroundColor(.red)
-                
+                Image(systemName: "star.fill")
+                    .tag("tag-star")
+                    .font(.custom("", size: 55))
+                    .foregroundColor(.orange)
+                    .symbolRenderingMode(.multicolor)
 
             }
             .pickerStyle(.segmented)
@@ -52,8 +53,8 @@ struct DashBoardConfig: View {
     }
 }
 
-//struct DashBoardConfig_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DashBoardConfig()
-//    }
-//}
+struct DashBoardConfig_Previews: PreviewProvider {
+    static var previews: some View {
+        DashBoardConfig(enableMultipleCharts: .constant(true), opt: .constant("tag 1"))
+    }
+}

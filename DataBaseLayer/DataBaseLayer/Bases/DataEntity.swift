@@ -4,9 +4,9 @@ import GRDB
 
 public protocol DataEntity : Equatable, Codable, FetchableRecord, PersistableRecord  {
     static var dataBaseTableName: String { get }
-    var id: Int64  { get }
+    var id: Int64?  { get }
 
-    static func mirrorObject() -> Mirror
+    //static func mirrorObject() -> Mirror
     
     
     

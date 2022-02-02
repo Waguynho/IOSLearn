@@ -20,7 +20,7 @@ public class DataAccess<T: DataEntity>   {
     
     public init(){
         
-        baseConnection = BaseConnection(pathDb: "\(path)/ws/db.sqlite3")
+        baseConnection = BaseConnection(pathDb: "\(path)/ws/alert-db.sqlite3")
         
         dbq = baseConnection.connectDd()!
         

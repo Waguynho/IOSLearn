@@ -6,7 +6,7 @@ public struct TodoItem: DataEntity , Identifiable{
     
     public static let dataBaseTableName = "todo_item"
     
-    public var id : Int64
+    public var id : Int64?
     public var title: String
     public var description: String?
     public var priority: Priority?
@@ -14,7 +14,6 @@ public struct TodoItem: DataEntity , Identifiable{
     public var completed = false
     
     public init(
-        id: Int64,
         title: String,
         description: String? = nil,
         priority: TodoItem.Priority? = nil,
@@ -22,7 +21,7 @@ public struct TodoItem: DataEntity , Identifiable{
         completed: Bool = false
     )
     {
-        self.id = id
+        //self.id = id
         self.title = title
         self.description = description
         self.priority = priority
@@ -31,10 +30,10 @@ public struct TodoItem: DataEntity , Identifiable{
     }
     
     
-    public static func mirrorObject() -> Mirror {
-        let dummy = Self.fixture()
-        return .init(reflecting: dummy)
-    }
+//    public static func mirrorObject() -> Mirror {
+//        let dummy = Self.fixture()
+//        return .init(reflecting: dummy)
+//    }
     
     
     static let example: [TodoItem] = [
@@ -73,6 +72,6 @@ extension TodoItem {
         
         
     ) -> Self {
-        .init(id: id, title: title, description: description, priority: priority, date: date, completed: completed)
+        .init( title: title, description: description, priority: priority, date: date, completed: completed)
     }
 }

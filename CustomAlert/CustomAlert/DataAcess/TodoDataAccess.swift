@@ -14,7 +14,7 @@ public struct TodoDataAcess {
     
     public func getCompletedTasks() -> [TodoItem] {
         
-        var newItem =  TodoItem(id: 1, title: "Title 1", description: "aaa", priority: .low, date: Date(), completed: false)
+        var newItem =  TodoItem(title: "Title 3", description: "ccc", priority: .normal, date: Date(), completed: true)
        
         base.save(newItem)
         

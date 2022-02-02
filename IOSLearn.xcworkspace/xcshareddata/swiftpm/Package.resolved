@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "GRDB",
+        "repositoryURL": "https://github.com/groue/GRDB.swift.git",
+        "state": {
+          "branch": "master",
+          "revision": "98ca653c6a1841b0fa2d69980aa941354d5c9ece",
+          "version": null
+        }
+      },
+      {
         "package": "mqtt-nio",
         "repositoryURL": "https://github.com/adam-fowler/mqtt-nio.git",
         "state": {

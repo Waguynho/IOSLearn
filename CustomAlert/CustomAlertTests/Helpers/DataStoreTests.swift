@@ -35,7 +35,7 @@ final class DataStoreTests: XCTestCase {
 extension DataStoreTests {
     typealias Sut = DataStore
     typealias Fields = (
-        todoItem: TodoItem,
+        todoItem: TodoTable,
         ()
     )
     
@@ -48,8 +48,9 @@ extension DataStoreTests {
     
     func makeSut(completed: Bool) -> (Sut,Fields) {
         let sut: Sut = .init()
-        let todoItem = TodoItem(
-            id: UUID(uuidString: "deadbeef-dead-beef-dead-beeddeadbeaf")!,
+        let todoItem = TodoTable(
+            //id: UUID(uuidString: "deadbeef-dead-beef-dead-beeddeadbeaf")!,
+            id: 99,
             title: "DummyTitle",
             description: "DummyDescription",
             priority: .high,

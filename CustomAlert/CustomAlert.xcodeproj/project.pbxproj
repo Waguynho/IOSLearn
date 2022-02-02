@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76056AB527AACC5C0075372C /* TodoDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76056AB427AACC5C0075372C /* TodoDataAccess.swift */; };
+		76056AB727AAD0300075372C /* DataBaseLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76056AB627AAD0300075372C /* DataBaseLayer.framework */; };
+		76056AB827AAD0300075372C /* DataBaseLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 76056AB627AAD0300075372C /* DataBaseLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		76584DFA2790B2DD001A6606 /* CustomAlertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76584DF92790B2DD001A6606 /* CustomAlertUITests.swift */; };
 		76584DFC2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76584DFB2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift */; };
 		766157C32788D0F100F2DF9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CD526427887C4900E273D8 /* Assets.xcassets */; };
@@ -17,7 +20,6 @@
 		76874663278DDAEB00C0EBFC /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 76874662278DDAEB00C0EBFC /* SnapshotTesting */; };
 		76CD526127887C4700E273D8 /* CustomAlertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD526027887C4700E273D8 /* CustomAlertApp.swift */; };
 		76CD526327887C4700E273D8 /* UncompletedTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD526227887C4700E273D8 /* UncompletedTasksView.swift */; };
-		76CD52702788837500E273D8 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD526F2788837500E273D8 /* TodoItem.swift */; };
 		76CD52752788881F00E273D8 /* DateEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52742788881F00E273D8 /* DateEx.swift */; };
 		76CD527727888C5100E273D8 /* TodoItemEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD527627888C5100E273D8 /* TodoItemEx.swift */; };
 		76CD527927888DB600E273D8 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD527827888DB600E273D8 /* Action.swift */; };
@@ -27,6 +29,7 @@
 		76CD52852788B6DE00E273D8 /* TextFieldAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52842788B6DE00E273D8 /* TextFieldAlertViewController.swift */; };
 		76CD52872788B9C600E273D8 /* UITextFieldEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52862788B9C600E273D8 /* UITextFieldEx.swift */; };
 		76CD52892788BA6800E273D8 /* ViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52882788BA6800E273D8 /* ViewEx.swift */; };
+		76DAF5A527AB191E00E35A13 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF5A427AB191E00E35A13 /* TodoItem.swift */; };
 		76E59E1D278C6D9800C95A5B /* CompletedTasksSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E59E1C278C6D9800C95A5B /* CompletedTasksSectionView.swift */; };
 		76E59E1F278C718600C95A5B /* ListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E59E1E278C718600C95A5B /* ListCellView.swift */; };
 		76E59E21278C78AB00C95A5B /* CompletedTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E59E20278C78AB00C95A5B /* CompletedTasksView.swift */; };
@@ -50,7 +53,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		76056AB927AAD0300075372C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				76056AB827AAD0300075372C /* DataBaseLayer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		76056AAC27AAB6890075372C /* DataBaseLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataBaseLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76056AB427AACC5C0075372C /* TodoDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDataAccess.swift; sourceTree = "<group>"; };
+		76056AB627AAD0300075372C /* DataBaseLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataBaseLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76584DF72790B2DD001A6606 /* CustomAlertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomAlertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76584DF92790B2DD001A6606 /* CustomAlertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertUITests.swift; sourceTree = "<group>"; };
 		76584DFB2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -63,7 +83,6 @@
 		76CD526227887C4700E273D8 /* UncompletedTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UncompletedTasksView.swift; sourceTree = "<group>"; };
 		76CD526427887C4900E273D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76CD526727887C4900E273D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		76CD526F2788837500E273D8 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
 		76CD52742788881F00E273D8 /* DateEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateEx.swift; sourceTree = "<group>"; };
 		76CD527627888C5100E273D8 /* TodoItemEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemEx.swift; sourceTree = "<group>"; };
 		76CD527827888DB600E273D8 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
@@ -73,6 +92,7 @@
 		76CD52842788B6DE00E273D8 /* TextFieldAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlertViewController.swift; sourceTree = "<group>"; };
 		76CD52862788B9C600E273D8 /* UITextFieldEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldEx.swift; sourceTree = "<group>"; };
 		76CD52882788BA6800E273D8 /* ViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEx.swift; sourceTree = "<group>"; };
+		76DAF5A427AB191E00E35A13 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
 		76E59E1C278C6D9800C95A5B /* CompletedTasksSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTasksSectionView.swift; sourceTree = "<group>"; };
 		76E59E1E278C718600C95A5B /* ListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellView.swift; sourceTree = "<group>"; };
 		76E59E20278C78AB00C95A5B /* CompletedTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTasksView.swift; sourceTree = "<group>"; };
@@ -99,12 +119,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76056AB727AAD0300075372C /* DataBaseLayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76056AB327AACC1C0075372C /* DataAcess */ = {
+			isa = PBXGroup;
+			children = (
+				76056AB427AACC5C0075372C /* TodoDataAccess.swift */,
+			);
+			path = DataAcess;
+			sourceTree = "<group>";
+		};
 		76584DF82790B2DD001A6606 /* CustomAlertUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +164,8 @@
 		76874661278DDAEB00C0EBFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76056AB627AAD0300075372C /* DataBaseLayer.framework */,
+				76056AAC27AAB6890075372C /* DataBaseLayer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,6 +194,7 @@
 		76CD525F27887C4700E273D8 /* CustomAlert */ = {
 			isa = PBXGroup;
 			children = (
+				76056AB327AACC1C0075372C /* DataAcess */,
 				76CD526027887C4700E273D8 /* CustomAlertApp.swift */,
 				76CD526227887C4700E273D8 /* UncompletedTasksView.swift */,
 				76CD526427887C4900E273D8 /* Assets.xcassets */,
@@ -186,8 +218,8 @@
 		76CD526E2788833700E273D8 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-				76CD526F2788837500E273D8 /* TodoItem.swift */,
 				76CD527827888DB600E273D8 /* Action.swift */,
+				76DAF5A427AB191E00E35A13 /* TodoItem.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -282,6 +314,7 @@
 				76CD525927887C4700E273D8 /* Sources */,
 				76CD525A27887C4700E273D8 /* Frameworks */,
 				76CD525B27887C4700E273D8 /* Resources */,
+				76056AB927AAD0300075372C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -400,11 +433,12 @@
 				76CD526327887C4700E273D8 /* UncompletedTasksView.swift in Sources */,
 				76CD52852788B6DE00E273D8 /* TextFieldAlertViewController.swift in Sources */,
 				76E59E1F278C718600C95A5B /* ListCellView.swift in Sources */,
+				76DAF5A527AB191E00E35A13 /* TodoItem.swift in Sources */,
 				76CD52752788881F00E273D8 /* DateEx.swift in Sources */,
 				76CD52892788BA6800E273D8 /* ViewEx.swift in Sources */,
 				76874646278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift in Sources */,
-				76CD52702788837500E273D8 /* TodoItem.swift in Sources */,
 				76CD52832788B62300E273D8 /* TextFieldAlert.swift in Sources */,
+				76056AB527AACC5C0075372C /* TodoDataAccess.swift in Sources */,
 				76CD526127887C4700E273D8 /* CustomAlertApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

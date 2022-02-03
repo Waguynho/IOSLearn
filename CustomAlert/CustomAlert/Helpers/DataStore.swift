@@ -5,12 +5,7 @@ import SwiftUI
 class DataStore: ObservableObject {
  
     static let shared = DataStore()
-    
-    init(){
-      // let test = TodoDataAcess().getCompletedTasks()
-        
-        //test.capacity
-    }
+
     
     @Published var allTodoItems = TodoItem.example
     @Published var currentAction: Action? = nil
@@ -59,8 +54,10 @@ class DataStore: ObservableObject {
         allTodoItems[getSelectedTodoItemIndex(selected: todoDataStore)].completed = true
     }
         
-    func delete(_ todoDataStore: TodoItem) {
-        allTodoItems.remove(at: getSelectedTodoItemIndex(selected: todoDataStore))
+    func delete(_ deleteItem: TodoItem) {
+        TodoDataAcess().delete(dataEntity: deleteItem)
+        refresh()
+        //allTodoItems.remove(at: getSelectedTodoItemIndex(selected: todoDataStore))
     }
         
     func edit(_ todoDataStore: TodoItem, newTodoItem: TodoItem) {
@@ -68,12 +65,24 @@ class DataStore: ObservableObject {
         allTodoItems[index] = newTodoItem
     }
         
-    func create(_ todoDataStore: TodoItem) {
-        allTodoItems.insert(todoDataStore, at: 0)
+    func create(_ newItem: TodoItem) {
+        TodoDataAcess().saveTask(dataEntity: newItem)
+        refresh()
+        //allTodoItems.insert(todoDataStore, at: 0)
     }
     
     private func getSelectedTodoItemIndex(selected todoDataStore: TodoItem) -> Int {
         allTodoItems.firstIndex(where: { $0.id == todoDataStore.id })!
+    }
+    
+    private func refresh(){
+        
+        TodoItem.refresh()
+        
+        DispatchQueue.main.async {
+            var temp = TodoItem.example
+            self.allTodoItems = TodoItem.example
+        }
     }
 }
 

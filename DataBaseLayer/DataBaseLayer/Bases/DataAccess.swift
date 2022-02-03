@@ -20,6 +20,26 @@ public class DataAccess<T: DataEntityProtocol>   {
         dbq = baseConnection.connectDd()!
     }
     
+    public func delete (_ dataEntity: T) {
+        
+        do {
+            
+            try dbq.write { db in
+                
+                try dataEntity.delete(db)
+            }
+            
+        } catch  let error1 as NSError {
+            print(error1.localizedFailureReason)
+            print(error1.localizedDescription)
+            print(error1.description)
+            print(error1)
+        } catch {
+            
+        }
+        
+    }
+    
     open func save(_ dataEntity: T) {
         
         do {

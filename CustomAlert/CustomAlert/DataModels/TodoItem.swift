@@ -1,6 +1,7 @@
 
 import DataBaseLayer
 import Foundation
+import SwiftUI
 
 public struct TodoItem: DataEntityProtocol , Identifiable{
     
@@ -28,16 +29,9 @@ public struct TodoItem: DataEntityProtocol , Identifiable{
         self.date = date
         self.completed = completed
     }
-    
-
-    
-    static let example: [TodoItem] = TodoDataAcess().getAllTasks()
+     
+   @State static var example: [TodoItem] = TodoDataAcess().getAllTasks()
         
-            
-        
-
-    
-    
 }
 
 extension TodoItem {
@@ -53,18 +47,8 @@ extension TodoItem {
         
     }
     
-    static func fixture(
-        
-        
-        id: Int64 = 0,
-        title: String = "",
-        description: String? = nil,
-        priority: TodoItem.Priority? = nil,
-        date: Date = .init(),
-        completed: Bool = false
-        
-        
-    ) -> Self {
-        .init( title: title, description: description, priority: priority, date: date, completed: completed)
+    static func refresh() {
+        var tasks = TodoDataAcess().getAllTasks()
+        TodoItem.example = tasks
     }
 }

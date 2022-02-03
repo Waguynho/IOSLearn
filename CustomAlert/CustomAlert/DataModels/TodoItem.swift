@@ -5,7 +5,6 @@ import SwiftUI
 
 public struct TodoItem: DataEntityProtocol , Identifiable{
     
- 
     public static let dataBaseTableName = "todo_item"
     
     public var id : Int64?
@@ -23,7 +22,7 @@ public struct TodoItem: DataEntityProtocol , Identifiable{
         completed: Bool = false
     )
     {
-        //self.id = id
+        
         self.title = title
         self.description = description
         self.priority = priority
@@ -31,7 +30,10 @@ public struct TodoItem: DataEntityProtocol , Identifiable{
         self.completed = completed
     }
      
-   @State static var example: [TodoItem] = TodoDataAcess().getAllTasks()
+    static var example: [TodoItem]  {
+        
+        TodoDataAcess().getAllTasks()
+    }
         
 }
 
@@ -47,9 +49,5 @@ extension TodoItem {
         
         
     }
-    
-    static func refresh() -> [TodoItem] {
-        var tasks = TodoDataAcess().getAllTasks()
-        return tasks
-    }
+
 }

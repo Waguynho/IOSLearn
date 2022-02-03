@@ -77,11 +77,11 @@ class DataStore: ObservableObject {
     
     private func refresh(){
         
-        TodoItem.refresh()
-        
         DispatchQueue.main.async {
-            var temp = TodoItem.example
-            self.allTodoItems = TodoItem.example
+            
+            var temp = TodoItem.refresh()
+            
+            self.allTodoItems = temp
         }
     }
 }

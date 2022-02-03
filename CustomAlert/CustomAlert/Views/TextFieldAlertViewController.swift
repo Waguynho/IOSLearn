@@ -103,8 +103,8 @@ class TextFieldAlertViewController: UIViewController {
             if let title = alertController.textFields![0].text,
                let description = alertController.textFields![1].text,
                let datePicker = alertController.textFields![3].inputView as? UIDatePicker {
-                let newTodoItem = TodoItem( title: description, description: description, priority: .low, date: Date())
-                DataStore.shared.edit(action.todoItem!, newTodoItem: newTodoItem)
+                var newTodoItem = TodoItem( title: title, description: description, priority: .low, date: Date())
+                DataStore.shared.edit(action.todoItem!,  &newTodoItem)
             }
         }
         let createAction = UIAlertAction(title: "Create", style: .default) { [self] _ in
@@ -114,7 +114,7 @@ class TextFieldAlertViewController: UIViewController {
                let datePicker = alertController.textFields![3].inputView as? UIDatePicker {
                 let priority = TodoItem.Priority.allCases.filter({ $0.rawValue.name == priorityText })
                 let newTodoItem = TodoItem(
-                     title: title, description: description, priority: .high, date: Date()
+                    title: title, description: description, priority: .high, date: Date()
                 )
                 
                 DataStore.shared.create(newTodoItem)

@@ -57,18 +57,21 @@ class DataStore: ObservableObject {
     func delete(_ deleteItem: TodoItem) {
         TodoDataAcess().delete(dataEntity: deleteItem)
         refresh()
-        //allTodoItems.remove(at: getSelectedTodoItemIndex(selected: todoDataStore))
     }
         
-    func edit(_ todoDataStore: TodoItem, newTodoItem: TodoItem) {
-        let index: Int = getSelectedTodoItemIndex(selected: todoDataStore)
-        allTodoItems[index] = newTodoItem
+    func edit(_ previewsTodoItem: TodoItem, _ editTodoItem: inout TodoItem) {
+        
+       // let index: Int = getSelectedTodoItemIndex(selected: editTodoItem)
+        editTodoItem.id = previewsTodoItem.id!
+        
+        TodoDataAcess().updateTask(dataEntity: editTodoItem)
+        
+        refresh()
     }
         
     func create(_ newItem: TodoItem) {
         TodoDataAcess().saveTask(dataEntity: newItem)
         refresh()
-        //allTodoItems.insert(todoDataStore, at: 0)
     }
     
     private func getSelectedTodoItemIndex(selected todoDataStore: TodoItem) -> Int {
@@ -78,8 +81,8 @@ class DataStore: ObservableObject {
     private func refresh(){
         
         DispatchQueue.main.async {
-
-            self.allTodoItems = TodoItem.example
+            var tasks = TodoItem.example
+            self.allTodoItems = tasks
         }
     }
 }

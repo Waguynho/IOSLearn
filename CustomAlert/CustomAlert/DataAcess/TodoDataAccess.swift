@@ -41,6 +41,10 @@ public struct TodoDataAcess {
         self.base.save(dataEntity)
     }
     
+    public func updateTask(dataEntity: TodoItem){
+        self.base.update(dataEntity)
+    }
+    
     public func delete(dataEntity: TodoItem){
         self.base.delete(dataEntity)
     }

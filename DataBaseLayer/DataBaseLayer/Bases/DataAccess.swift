@@ -30,7 +30,7 @@ public class DataAccess<T: DataEntityProtocol>   {
             }
             
         } catch  let error1 as NSError {
-            print(error1.localizedFailureReason)
+            print("ERROR DELETE")
             print(error1.localizedDescription)
             print(error1.description)
             print(error1)
@@ -51,7 +51,26 @@ public class DataAccess<T: DataEntityProtocol>   {
             }
             
         } catch  let error1 as NSError {
-            print(error1.localizedFailureReason)
+            print("ERROR CREATE")
+            print(error1.localizedDescription)
+            print(error1.description)
+            print(error1)
+        } catch {
+            
+        }
+    }
+    
+    open func update(_ dataEntity: T) {
+        
+        do {
+            
+            try dbq.write{ db in
+                
+                try dataEntity.update(db)
+            }
+            
+        } catch  let error1 as NSError {
+            print("ERROR UPDATE")
             print(error1.localizedDescription)
             print(error1.description)
             print(error1)
@@ -71,6 +90,7 @@ public class DataAccess<T: DataEntityProtocol>   {
             }
             
         } catch  let error1 as NSError {
+            print("ERROR READ ALL")
             print(error1)
         } catch {
             

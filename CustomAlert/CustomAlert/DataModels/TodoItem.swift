@@ -5,7 +5,7 @@ import SwiftUI
 
 public struct TodoItem: DataEntityProtocol , Identifiable{
     
-    public static let dataBaseTableName = "todo_item"
+    public static var dataBaseTableName: String = "todo_item"
     
     public var id : Int64?
     public var title: String
@@ -22,7 +22,7 @@ public struct TodoItem: DataEntityProtocol , Identifiable{
         completed: Bool = false
     )
     {
-        
+        //self.id = id
         self.title = title
         self.description = description
         self.priority = priority

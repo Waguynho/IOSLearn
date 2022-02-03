@@ -7,9 +7,9 @@ class DataStore: ObservableObject {
     static let shared = DataStore()
     
     init(){
-       let test = TodoDataAcess().getCompletedTasks()
+      // let test = TodoDataAcess().getCompletedTasks()
         
-        test.capacity
+        //test.capacity
     }
     
     @Published var allTodoItems = TodoItem.example

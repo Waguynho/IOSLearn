@@ -2,7 +2,7 @@
 import DataBaseLayer
 import Foundation
 
-public struct TodoItem: DataEntity , Identifiable{
+public struct TodoItem: DataEntityProtocol , Identifiable{
     
     public static let dataBaseTableName = "todo_item"
     
@@ -15,9 +15,9 @@ public struct TodoItem: DataEntity , Identifiable{
     
     public init(
         title: String,
-        description: String? = nil,
-        priority: TodoItem.Priority? = nil,
-        date: Date,
+        description: String? = "",
+        priority: TodoItem.Priority? = .normal,
+        date: Date = Date(),
         completed: Bool = false
     )
     {
@@ -29,21 +29,14 @@ public struct TodoItem: DataEntity , Identifiable{
         self.completed = completed
     }
     
+
     
-//    public static func mirrorObject() -> Mirror {
-//        let dummy = Self.fixture()
-//        return .init(reflecting: dummy)
-//    }
-    
-    
-    static let example: [TodoItem] = [
+    static let example: [TodoItem] = TodoDataAcess().getAllTasks()
         
-        //        TodoItem(description: "Buy a new iPhone 12 Pro Max.", priority: .urgent, date: Date().daysAdded(5), completed: false, title: "Go to Apple Store!"),
-        //        TodoItem(description: "At 12pm, I must drink a latte.", priority: .high, date: Date().daysAdded(3), completed: false, title: "Make some coffee. ☕️"),
-        //        TodoItem(description: "Mail boxes", priority: .high, date: Date().daysAdded(-2), completed: true, title: "Look the mail boxes"),
-        //        TodoItem(description: "I want to watch ", priority: .low, date: Date().daysAdded(-5), completed: true, title: "Watch documentary"),
-        //        TodoItem(description: "I want to read B. Obama's new book.", priority: .normal, date: Date().daysAdded(1), completed: false, title: "Read book")
-    ]
+            
+        
+
+    
     
 }
 

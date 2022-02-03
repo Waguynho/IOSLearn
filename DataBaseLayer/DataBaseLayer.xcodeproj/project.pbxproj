@@ -12,8 +12,9 @@
 		76056A9C27AAAFB20075372C /* DataBaseLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 76056A9027AAAFB20075372C /* DataBaseLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		76056AA727AAB0C40075372C /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 76056AA627AAB0C40075372C /* GRDB */; };
 		76056AA927AAB12C0075372C /* BaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76056AA827AAB12C0075372C /* BaseConnection.swift */; };
-		76056AAB27AAB5FF0075372C /* DataEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76056AAA27AAB5FF0075372C /* DataEntity.swift */; };
+		76056AAB27AAB5FF0075372C /* DataEntityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76056AAA27AAB5FF0075372C /* DataEntityProtocol.swift */; };
 		76056AB227AAC2BF0075372C /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76056AB127AAC2BF0075372C /* DataAccess.swift */; };
+		76B8A49A27AC071A001BB767 /* DataEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B8A49927AC071A001BB767 /* DataEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,8 +33,9 @@
 		76056A9527AAAFB20075372C /* DataBaseLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataBaseLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76056A9A27AAAFB20075372C /* DataBaseLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseLayerTests.swift; sourceTree = "<group>"; };
 		76056AA827AAB12C0075372C /* BaseConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConnection.swift; sourceTree = "<group>"; };
-		76056AAA27AAB5FF0075372C /* DataEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntity.swift; sourceTree = "<group>"; };
+		76056AAA27AAB5FF0075372C /* DataEntityProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntityProtocol.swift; sourceTree = "<group>"; };
 		76056AB127AAC2BF0075372C /* DataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
+		76B8A49927AC071A001BB767 /* DataEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +96,10 @@
 		76056AB027AAC21B0075372C /* Bases */ = {
 			isa = PBXGroup;
 			children = (
-				76056AAA27AAB5FF0075372C /* DataEntity.swift */,
+				76056AAA27AAB5FF0075372C /* DataEntityProtocol.swift */,
 				76056AA827AAB12C0075372C /* BaseConnection.swift */,
 				76056AB127AAC2BF0075372C /* DataAccess.swift */,
+				76B8A49927AC071A001BB767 /* DataEntity.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -217,8 +220,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76056AAB27AAB5FF0075372C /* DataEntity.swift in Sources */,
+				76056AAB27AAB5FF0075372C /* DataEntityProtocol.swift in Sources */,
 				76056AB227AAC2BF0075372C /* DataAccess.swift in Sources */,
+				76B8A49A27AC071A001BB767 /* DataEntity.swift in Sources */,
 				76056AA927AAB12C0075372C /* BaseConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

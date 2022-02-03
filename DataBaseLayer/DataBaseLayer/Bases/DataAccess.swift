@@ -3,12 +3,7 @@ import Foundation
 import GRDB
 
 
-public protocol EntityBase: Record, DataEntity {
-    
-    
-}
-
-public class DataAccess<T: DataEntity>   {
+public class DataAccess<T: DataEntityProtocol>   {
     
     
     private  let  baseConnection:  BaseConnection
@@ -23,7 +18,6 @@ public class DataAccess<T: DataEntity>   {
         baseConnection = BaseConnection(pathDb: "\(path)/ws/alert-db.sqlite3")
         
         dbq = baseConnection.connectDd()!
-        
     }
     
     open func save(_ dataEntity: T) {
@@ -32,8 +26,8 @@ public class DataAccess<T: DataEntity>   {
             
             try dbq.write{ db in
                 
-               try dataEntity.save(db)
-
+                try dataEntity.save(db)
+                
             }
             
         } catch  let error1 as NSError {
@@ -46,18 +40,23 @@ public class DataAccess<T: DataEntity>   {
         }
     }
     
-//    open func readAll (_ dataEntity: DataEntity){
-//        do {
-//
-//            try dbq.read { db in
-//               // let items = try dataEntity.fetchAll(db)
-//            }
-//
-//        } catch  let error1 as NSError {
-//            print(error1)
-//        } catch {
-//
-//        }
-//    }
+    public func readAll () -> [T]  {
+        
+        var result: [T] = []
+        
+        do {
+            
+            try  self.dbq.read { db in
+                result = try T.fetchAll( db)
+            }
+            
+        } catch  let error1 as NSError {
+            print(error1)
+        } catch {
+            
+        }
+        
+        return result
+    }
 }
 

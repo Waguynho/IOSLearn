@@ -15,6 +15,7 @@
 		76056AAB27AAB5FF0075372C /* DataEntityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76056AAA27AAB5FF0075372C /* DataEntityProtocol.swift */; };
 		76056AB227AAC2BF0075372C /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76056AB127AAC2BF0075372C /* DataAccess.swift */; };
 		76B8A49A27AC071A001BB767 /* DataEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B8A49927AC071A001BB767 /* DataEntity.swift */; };
+		76B8A49C27AC3C09001BB767 /* DaoBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B8A49B27AC3C09001BB767 /* DaoBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		76056AAA27AAB5FF0075372C /* DataEntityProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntityProtocol.swift; sourceTree = "<group>"; };
 		76056AB127AAC2BF0075372C /* DataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
 		76B8A49927AC071A001BB767 /* DataEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntity.swift; sourceTree = "<group>"; };
+		76B8A49B27AC3C09001BB767 /* DaoBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaoBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		76056A8F27AAAFB20075372C /* DataBaseLayer */ = {
 			isa = PBXGroup;
 			children = (
+				76B8A49D27AC3D90001BB767 /* Dao */,
 				76056AB027AAC21B0075372C /* Bases */,
 				76056A9027AAAFB20075372C /* DataBaseLayer.h */,
 			);
@@ -100,8 +103,16 @@
 				76056AA827AAB12C0075372C /* BaseConnection.swift */,
 				76056AB127AAC2BF0075372C /* DataAccess.swift */,
 				76B8A49927AC071A001BB767 /* DataEntity.swift */,
+				76B8A49B27AC3C09001BB767 /* DaoBase.swift */,
 			);
 			path = Bases;
+			sourceTree = "<group>";
+		};
+		76B8A49D27AC3D90001BB767 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dao;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +233,7 @@
 			files = (
 				76056AAB27AAB5FF0075372C /* DataEntityProtocol.swift in Sources */,
 				76056AB227AAC2BF0075372C /* DataAccess.swift in Sources */,
+				76B8A49C27AC3C09001BB767 /* DaoBase.swift in Sources */,
 				76B8A49A27AC071A001BB767 /* DataEntity.swift in Sources */,
 				76056AA927AAB12C0075372C /* BaseConnection.swift in Sources */,
 			);

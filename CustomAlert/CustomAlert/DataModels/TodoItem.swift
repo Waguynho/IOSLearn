@@ -1,6 +1,5 @@
 
 import DataBaseLayer
-import Foundation
 import SwiftUI
 
 public struct TodoItem: DataEntityProtocol , Identifiable{
@@ -32,7 +31,10 @@ public struct TodoItem: DataEntityProtocol , Identifiable{
      
     static var example: [TodoItem]  {
         
-        TodoDataAcess().getAllTasks()
+       // TodoDataAcess().getAllTasks()
+        
+        TodoDao().readAllXXX()
+       
     }
         
 }
@@ -46,7 +48,6 @@ extension TodoItem {
         case low
         
         static let all = Priority.allCases
-        
         
     }
 

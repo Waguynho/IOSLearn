@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		76056AB527AACC5C0075372C /* TodoDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76056AB427AACC5C0075372C /* TodoDataAccess.swift */; };
-		76056AB727AAD0300075372C /* DataBaseLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76056AB627AAD0300075372C /* DataBaseLayer.framework */; };
-		76056AB827AAD0300075372C /* DataBaseLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 76056AB627AAD0300075372C /* DataBaseLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		76584DFA2790B2DD001A6606 /* CustomAlertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76584DF92790B2DD001A6606 /* CustomAlertUITests.swift */; };
 		76584DFC2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76584DFB2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift */; };
 		766157C32788D0F100F2DF9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CD526427887C4900E273D8 /* Assets.xcassets */; };
@@ -33,6 +31,9 @@
 		76E59E1D278C6D9800C95A5B /* CompletedTasksSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E59E1C278C6D9800C95A5B /* CompletedTasksSectionView.swift */; };
 		76E59E1F278C718600C95A5B /* ListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E59E1E278C718600C95A5B /* ListCellView.swift */; };
 		76E59E21278C78AB00C95A5B /* CompletedTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E59E20278C78AB00C95A5B /* CompletedTasksView.swift */; };
+		76F3749B27AD48120064A1FA /* TodoDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F3749A27AD48120064A1FA /* TodoDao.swift */; };
+		76F3749D27AD49550064A1FA /* DataBaseLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F3749C27AD49550064A1FA /* DataBaseLayer.framework */; };
+		76F3749E27AD49550064A1FA /* DataBaseLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 76F3749C27AD49550064A1FA /* DataBaseLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		76F5B6D6278EF8750068859F /* CompletedTaskViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F5B6D5278EF8750068859F /* CompletedTaskViewsTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,13 +55,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		76056AB927AAD0300075372C /* Embed Frameworks */ = {
+		76F3749F27AD49550064A1FA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				76056AB827AAD0300075372C /* DataBaseLayer.framework in Embed Frameworks */,
+				76F3749E27AD49550064A1FA /* DataBaseLayer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +97,8 @@
 		76E59E1C278C6D9800C95A5B /* CompletedTasksSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTasksSectionView.swift; sourceTree = "<group>"; };
 		76E59E1E278C718600C95A5B /* ListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellView.swift; sourceTree = "<group>"; };
 		76E59E20278C78AB00C95A5B /* CompletedTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTasksView.swift; sourceTree = "<group>"; };
+		76F3749A27AD48120064A1FA /* TodoDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDao.swift; sourceTree = "<group>"; };
+		76F3749C27AD49550064A1FA /* DataBaseLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataBaseLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F5B6D5278EF8750068859F /* CompletedTaskViewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTaskViewsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76056AB727AAD0300075372C /* DataBaseLayer.framework in Frameworks */,
+				76F3749D27AD49550064A1FA /* DataBaseLayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +167,7 @@
 		76874661278DDAEB00C0EBFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76F3749C27AD49550064A1FA /* DataBaseLayer.framework */,
 				76056AB627AAD0300075372C /* DataBaseLayer.framework */,
 				76056AAC27AAB6890075372C /* DataBaseLayer.framework */,
 			);
@@ -194,6 +198,7 @@
 		76CD525F27887C4700E273D8 /* CustomAlert */ = {
 			isa = PBXGroup;
 			children = (
+				76F3749927AD48030064A1FA /* Dao */,
 				76056AB327AACC1C0075372C /* DataAcess */,
 				76CD526027887C4700E273D8 /* CustomAlertApp.swift */,
 				76CD526227887C4700E273D8 /* UncompletedTasksView.swift */,
@@ -257,6 +262,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		76F3749927AD48030064A1FA /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				76F3749A27AD48120064A1FA /* TodoDao.swift */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
 		76F5B6D4278EF84A0068859F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,7 +327,7 @@
 				76CD525927887C4700E273D8 /* Sources */,
 				76CD525A27887C4700E273D8 /* Frameworks */,
 				76CD525B27887C4700E273D8 /* Resources */,
-				76056AB927AAD0300075372C /* Embed Frameworks */,
+				76F3749F27AD49550064A1FA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -439,6 +452,7 @@
 				76874646278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift in Sources */,
 				76CD52832788B62300E273D8 /* TextFieldAlert.swift in Sources */,
 				76056AB527AACC5C0075372C /* TodoDataAccess.swift in Sources */,
+				76F3749B27AD48120064A1FA /* TodoDao.swift in Sources */,
 				76CD526127887C4700E273D8 /* CustomAlertApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

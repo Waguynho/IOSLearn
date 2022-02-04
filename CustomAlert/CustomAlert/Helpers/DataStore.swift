@@ -7,7 +7,7 @@ class DataStore: ObservableObject {
     static let shared = DataStore()
 
     
-    @Published var allTodoItems = TodoItem.example
+    @Published var  allTodoItems = TodoItem.example
     @Published var currentAction: Action? = nil
     @State var menuActions: [Action] = []
     @Published var alertShowing = false
@@ -55,22 +55,23 @@ class DataStore: ObservableObject {
     }
         
     func delete(_ deleteItem: TodoItem) {
-        TodoDataAcess().delete(dataEntity: deleteItem)
+        
+        TodoDao().delete(deleteItem)
         refresh()
     }
         
     func edit(_ previewsTodoItem: TodoItem, _ editTodoItem: inout TodoItem) {
         
-       // let index: Int = getSelectedTodoItemIndex(selected: editTodoItem)
         editTodoItem.id = previewsTodoItem.id!
         
-        TodoDataAcess().updateTask(dataEntity: editTodoItem)
+        TodoDao().update(editTodoItem)
         
         refresh()
     }
         
     func create(_ newItem: TodoItem) {
-        TodoDataAcess().saveTask(dataEntity: newItem)
+        //TodoDataAcess().saveTask(dataEntity: newItem)
+        TodoDao().save(newItem)
         refresh()
     }
     
@@ -81,8 +82,10 @@ class DataStore: ObservableObject {
     private func refresh(){
         
         DispatchQueue.main.async {
-            var tasks = TodoItem.example
-            self.allTodoItems = tasks
+
+            let xxxxx = TodoItem.example
+            self.allTodoItems = xxxxx
+
         }
     }
 }

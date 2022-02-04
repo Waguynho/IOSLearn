@@ -5,7 +5,6 @@ import SwiftUI
 class DataStore: ObservableObject {
  
     static let shared = DataStore()
-
     
     @Published var  allTodoItems = TodoItem.example
     @Published var currentAction: Action? = nil
@@ -22,9 +21,7 @@ class DataStore: ObservableObject {
         return allTodoItems.filter { todoDataStore in
             todoDataStore.completed
         }
-    }
-    
-    
+    }  
     
     func getMenuItems(selected todoDataStore: TodoItem) -> some View {
         var actions: [Action] {
@@ -46,12 +43,15 @@ class DataStore: ObservableObject {
         }
     }
     
-    func uncomplete(_ todoDataStore: TodoItem) {
-        allTodoItems[getSelectedTodoItemIndex(selected: todoDataStore)].completed = false
+    func uncomplete(_ item: inout TodoItem) {
+        item.completed = false
+        updateItem(item)
     }
+    
         
-    func complete(_ todoDataStore: TodoItem) {
-        allTodoItems[getSelectedTodoItemIndex(selected: todoDataStore)].completed = true
+    func complete( _ item: inout TodoItem) {
+        item.completed = true
+        updateItem(item)
     }
         
     func delete(_ deleteItem: TodoItem) {
@@ -64,14 +64,17 @@ class DataStore: ObservableObject {
         
         editTodoItem.id = previewsTodoItem.id!
         
-        TodoDao().update(editTodoItem)
-        
-        refresh()
+        updateItem(editTodoItem)
     }
         
     func create(_ newItem: TodoItem) {
-        //TodoDataAcess().saveTask(dataEntity: newItem)
+        
         TodoDao().save(newItem)
+        refresh()
+    }
+    
+    private func updateItem(_ item: TodoItem){
+        TodoDao().update(item)
         refresh()
     }
     

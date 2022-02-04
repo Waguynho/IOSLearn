@@ -12,7 +12,7 @@ class TextFieldAlertViewController: UIViewController {
     lazy var pickerView = UIPickerView()
     
     // MARK: - Properties
-    private let action: Action
+    private var action: Action
     private var isPresented: Binding<Bool>?
     let pickerViewComponents = TodoItem.Priority.allCases
     let pickerData = ["Urgent","High","Normal","Low"]
@@ -85,12 +85,12 @@ class TextFieldAlertViewController: UIViewController {
         }
         let completeAction = UIAlertAction(title: "Complete", style: .default) { [self] _ in
             withAnimation {
-                DataStore.shared.complete(action.todoItem!)
+                DataStore.shared.complete(&action.todoItem!)
             }
         }
         let uncompleteAction = UIAlertAction(title: "Uncomplete", style: .default) { [self] _ in
             withAnimation {
-                DataStore.shared.uncomplete(action.todoItem!)
+                DataStore.shared.uncomplete(&action.todoItem!)
             }
         }
         let deleteAction = UIAlertAction(title: "Delete", style: .default) { [self] _ in

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		76056AB527AACC5C0075372C /* TodoDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76056AB427AACC5C0075372C /* TodoDataAccess.swift */; };
 		76584DFA2790B2DD001A6606 /* CustomAlertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76584DF92790B2DD001A6606 /* CustomAlertUITests.swift */; };
 		76584DFC2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76584DFB2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift */; };
 		766157C32788D0F100F2DF9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CD526427887C4900E273D8 /* Assets.xcassets */; };
@@ -70,7 +69,6 @@
 
 /* Begin PBXFileReference section */
 		76056AAC27AAB6890075372C /* DataBaseLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataBaseLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76056AB427AACC5C0075372C /* TodoDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDataAccess.swift; sourceTree = "<group>"; };
 		76056AB627AAD0300075372C /* DataBaseLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataBaseLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76584DF72790B2DD001A6606 /* CustomAlertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomAlertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76584DF92790B2DD001A6606 /* CustomAlertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertUITests.swift; sourceTree = "<group>"; };
@@ -129,14 +127,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		76056AB327AACC1C0075372C /* DataAcess */ = {
-			isa = PBXGroup;
-			children = (
-				76056AB427AACC5C0075372C /* TodoDataAccess.swift */,
-			);
-			path = DataAcess;
-			sourceTree = "<group>";
-		};
 		76584DF82790B2DD001A6606 /* CustomAlertUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				76F3749927AD48030064A1FA /* Dao */,
-				76056AB327AACC1C0075372C /* DataAcess */,
 				76CD526027887C4700E273D8 /* CustomAlertApp.swift */,
 				76CD526227887C4700E273D8 /* UncompletedTasksView.swift */,
 				76CD526427887C4900E273D8 /* Assets.xcassets */,
@@ -451,7 +440,6 @@
 				76CD52892788BA6800E273D8 /* ViewEx.swift in Sources */,
 				76874646278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift in Sources */,
 				76CD52832788B62300E273D8 /* TextFieldAlert.swift in Sources */,
-				76056AB527AACC5C0075372C /* TodoDataAccess.swift in Sources */,
 				76F3749B27AD48120064A1FA /* TodoDao.swift in Sources */,
 				76CD526127887C4700E273D8 /* CustomAlertApp.swift in Sources */,
 			);

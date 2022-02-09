@@ -81,7 +81,7 @@ open class DaoBase <T: DataEntityProtocol> {
 
 public extension DaoBase {
     
-     func readAllXXX () -> [T]  {
+     func readAll () -> [T]  {
         
         var result: [T] = []
         
@@ -116,7 +116,7 @@ public extension DaoBase {
             }
             
         }catch  let error1 as NSError {
-            print(error1.localizedFailureReason)
+            print(error1.localizedFailureReason as Any)
             print(error1.localizedDescription)
             print(error1.description)
             print(error1)

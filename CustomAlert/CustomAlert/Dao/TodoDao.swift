@@ -4,7 +4,7 @@ final class TodoDao : DaoBase<TodoItem> {
     
     public func getCompletedItems () -> [TodoItem] {
         
-        var completeds =  self.readAllXXX().filter {
+        let completeds =  self.readAll().filter {
             $0.completed == true
         }
        

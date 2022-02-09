@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7643823027B2FD20005F4880 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 7643822F27B2FD20005F4880 /* Charts */; };
+		7643823227B2FDB5005F4880 /* TodoPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643823127B2FDB5005F4880 /* TodoPieChart.swift */; };
+		7643823627B309AA005F4880 /* ChartContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643823527B309AA005F4880 /* ChartContainer.swift */; };
 		76584DFA2790B2DD001A6606 /* CustomAlertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76584DF92790B2DD001A6606 /* CustomAlertUITests.swift */; };
 		76584DFC2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76584DFB2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift */; };
 		766157C32788D0F100F2DF9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CD526427887C4900E273D8 /* Assets.xcassets */; };
@@ -70,6 +73,8 @@
 /* Begin PBXFileReference section */
 		76056AAC27AAB6890075372C /* DataBaseLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataBaseLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76056AB627AAD0300075372C /* DataBaseLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataBaseLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7643823127B2FDB5005F4880 /* TodoPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoPieChart.swift; sourceTree = "<group>"; };
+		7643823527B309AA005F4880 /* ChartContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartContainer.swift; sourceTree = "<group>"; };
 		76584DF72790B2DD001A6606 /* CustomAlertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomAlertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76584DF92790B2DD001A6606 /* CustomAlertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertUITests.swift; sourceTree = "<group>"; };
 		76584DFB2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -121,12 +126,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				76F3749D27AD49550064A1FA /* DataBaseLayer.framework in Frameworks */,
+				7643823027B2FD20005F4880 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7643822D27B2FCBB005F4880 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				7643823127B2FDB5005F4880 /* TodoPieChart.swift */,
+				7643823527B309AA005F4880 /* ChartContainer.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
 		76584DF82790B2DD001A6606 /* CustomAlertUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +256,7 @@
 		76CD527D2788B4D700E273D8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7643822D27B2FCBB005F4880 /* Charts */,
 				76CD527E2788B50000E273D8 /* TextFieldWrapper.swift */,
 				76CD52822788B62300E273D8 /* TextFieldAlert.swift */,
 				76CD52842788B6DE00E273D8 /* TextFieldAlertViewController.swift */,
@@ -324,6 +340,7 @@
 			);
 			name = CustomAlert;
 			packageProductDependencies = (
+				7643822F27B2FD20005F4880 /* Charts */,
 			);
 			productName = CustomAlert;
 			productReference = 76CD525D27887C4700E273D8 /* CustomAlert.app */;
@@ -363,6 +380,7 @@
 			mainGroup = 76CD525427887C4700E273D8;
 			packageReferences = (
 				7687465E278DD96100C0EBFC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				7643822E27B2FD20005F4880 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 76CD525E27887C4700E273D8 /* Products */;
 			projectDirPath = "";
@@ -425,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7643823627B309AA005F4880 /* ChartContainer.swift in Sources */,
 				76E59E1D278C6D9800C95A5B /* CompletedTasksSectionView.swift in Sources */,
 				76E59E21278C78AB00C95A5B /* CompletedTasksView.swift in Sources */,
 				76CD527C27889BB900E273D8 /* DataStore.swift in Sources */,
@@ -438,6 +457,7 @@
 				76DAF5A527AB191E00E35A13 /* TodoItem.swift in Sources */,
 				76CD52752788881F00E273D8 /* DateEx.swift in Sources */,
 				76CD52892788BA6800E273D8 /* ViewEx.swift in Sources */,
+				7643823227B2FDB5005F4880 /* TodoPieChart.swift in Sources */,
 				76874646278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift in Sources */,
 				76CD52832788B62300E273D8 /* TextFieldAlert.swift in Sources */,
 				76F3749B27AD48120064A1FA /* TodoDao.swift in Sources */,
@@ -741,6 +761,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7643822E27B2FD20005F4880 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		7687465E278DD96100C0EBFC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
@@ -752,6 +780,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7643822F27B2FD20005F4880 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7643822E27B2FD20005F4880 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
 		76874662278DDAEB00C0EBFC /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7687465E278DD96100C0EBFC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;

@@ -33,7 +33,7 @@ public struct TodoItem: DataEntityProtocol , Identifiable{
         
        // TodoDataAcess().getAllTasks()
         
-        TodoDao().readAllXXX()
+        TodoDao().readAll()
        
     }
         

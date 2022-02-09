@@ -12,7 +12,8 @@ struct CustomAlertApp: App {
     
     var body: some Scene {
         WindowGroup {
-         UncompletedTasksView()
+         //UncompletedTasksView()
+            TodoPieChart()
         }
     }
 }

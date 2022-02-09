@@ -20,7 +20,7 @@ struct UncompletedTasksView: View {
         
         NavigationView () {
             
-            VStack{
+            VStack (spacing: 20){
                 
                 HStack (spacing: 5){
                     
@@ -29,18 +29,19 @@ struct UncompletedTasksView: View {
                     NavigationLink(destination: PriorityPieChart()) {
                         Image(systemName: "chart.pie.fill")
                             .font(.title3)
-                            .foregroundColor(.black)
+                            .foregroundColor(.orange)
                     }
                     
                     NavigationLink(destination: EmptyView()) {
                         Image(systemName: "chart.line.uptrend.xyaxis")
                             .font(.title3)
-                            .foregroundColor(.black)
+                            .foregroundColor(.green)
                     }
                 }
-                .background(.green)
-                .frame(minWidth: 5)
-                .padding()
+                //.background(.green)
+                .frame(height: 2)
+                //.padding(.top, -25)
+                .padding(.trailing, 10)
                 
                 List {
                     if !dataStore.completedTodoItems.isEmpty {
@@ -69,7 +70,9 @@ struct UncompletedTasksView: View {
                         })
                 )
                 .navigationTitle("Waiting Tasks")
-            }
+            }// vst
+            //.background(.red)
+            .padding(.all, 1)
         }
         .textFieldAlert(isPresented: $dataStore.alertShowing) {
             TextFieldAlert(action: dataStore.currentAction!)

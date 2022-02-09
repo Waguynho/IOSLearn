@@ -28,20 +28,20 @@ public struct TodoItem: DataEntityProtocol , Identifiable{
         self.date = date
         self.completed = completed
     }
-     
+    
     static var example: [TodoItem]  {
         
-       // TodoDataAcess().getAllTasks()
+        // TodoDataAcess().getAllTasks()
         
         TodoDao().readAll()
-       
-    }
         
+    }
+    
 }
 
-extension TodoItem {
+extension TodoItem  {
     
-    public enum Priority: CaseIterable, Codable {
+    public enum Priority: CaseIterable, Codable, CustomStringConvertible {
         case urgent
         case high
         case normal
@@ -49,6 +49,13 @@ extension TodoItem {
         
         static let all = Priority.allCases
         
+        public  var description : String {
+            switch self {
+            case .urgent: return "Urgente"
+            case .high: return "High"
+            case .low: return "Low"
+            case .normal: return "Normal"
+            }
+        }
     }
-
 }

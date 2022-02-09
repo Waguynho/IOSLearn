@@ -10,7 +10,7 @@ import SwiftUI
 struct ChartContainer: View {
     var body: some View {
         VStack {
-            TodoPieChart()
+            PriorityPieChart()
         }
         .frame(width: 300, height: 300, alignment: .trailing)
     }

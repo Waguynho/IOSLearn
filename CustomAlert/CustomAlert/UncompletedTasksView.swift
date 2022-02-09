@@ -18,34 +18,58 @@ struct UncompletedTasksView: View {
     // MARK: - View
     var body: some View {
         
-        NavigationView {
+        NavigationView () {
             
-            List {
-                if !dataStore.completedTodoItems.isEmpty {
-                    CompletedTasksSectionView(count: dataStore.completedTodoItems.count)
-                        .onTapGesture {
-                            completedTasksViewIsAppear = true
-                        }
-                }
-                Section {
-                    ForEach(dataStore.incompleteTodoItems) { todoItem in
-                        ListCellView(todoItem: todoItem)
+            VStack{
+                
+                HStack (spacing: 5){
+                    
+                    Spacer()
+                    
+                    NavigationLink(destination: PriorityPieChart()) {
+                        Image(systemName: "chart.pie.fill")
+                            .font(.title3)
+                            .foregroundColor(.black)
+                    }
+                    
+                    NavigationLink(destination: EmptyView()) {
+                        Image(systemName: "chart.line.uptrend.xyaxis")
+                            .font(.title3)
+                            .foregroundColor(.black)
                     }
                 }
+                .background(.green)
+                .frame(minWidth: 5)
+                .padding()
+                
+                List {
+                    if !dataStore.completedTodoItems.isEmpty {
+                        CompletedTasksSectionView(count: dataStore.completedTodoItems.count)
+                            .onTapGesture {
+                                completedTasksViewIsAppear = true
+                            }
+                    }
+                    Section {
+                        ForEach(dataStore.incompleteTodoItems) { todoItem in
+                            ListCellView(todoItem: todoItem)
+                        }
+                        Spacer()
+                    }
+                }
+                .listStyle(InsetGroupedListStyle())
+                .navigationBarItems(
+                    trailing: Button(
+                        action: {
+                            dataStore.currentAction = Action.actions.create
+                            dataStore.alertShowing = true
+                        },
+                        label: {
+                            Image(systemName: "plus.circle.fill")
+                                .font(.title3)
+                        })
+                )
+                .navigationTitle("Waiting Tasks")
             }
-            .listStyle(InsetGroupedListStyle())
-            .navigationBarItems(
-                trailing: Button(
-                    action: {
-                        dataStore.currentAction = Action.actions.create
-                        dataStore.alertShowing = true
-                    },
-                    label: {
-                        Image(systemName: "plus.circle.fill")
-                       .font(.title3)
-                    })
-            )
-            .navigationTitle("Waiting Tasks")
         }
         .textFieldAlert(isPresented: $dataStore.alertShowing) {
             TextFieldAlert(action: dataStore.currentAction!)
@@ -54,7 +78,6 @@ struct UncompletedTasksView: View {
             CompletedTasksView()
         })
     }
-    
 }
 
 struct UncompletedTasksView_Previews: PreviewProvider {

@@ -3,6 +3,7 @@ import SwiftUI
 
 struct PriorityPieChart: UIViewRepresentable {
     
+    
     private let dao : TodoDao = TodoDao()
     
     func makeUIView(context: Context) -> PieChartView {
@@ -16,7 +17,7 @@ struct PriorityPieChart: UIViewRepresentable {
         dataEntires.append(PieChartDataEntry(value: Double( dao.getItemsByPriority(priority: TodoItem.Priority.urgent).count ), label: TodoItem.Priority.high.description))
         dataEntires.append(PieChartDataEntry(value: Double( dao.getItemsByPriority(priority: TodoItem.Priority.high).count ), label: TodoItem.Priority.high.description))
         dataEntires.append(PieChartDataEntry(value: Double( dao.getItemsByPriority(priority: TodoItem.Priority.normal).count ), label: TodoItem.Priority.normal.description))
-        dataEntires.append(PieChartDataEntry(value: Double( dao.getItemsByPriority(priority: TodoItem.Priority.low).count ), label: TodoItem.Priority.normal.description))
+        dataEntires.append(PieChartDataEntry(value: Double( dao.getItemsByPriority(priority: TodoItem.Priority.low).count ), label: TodoItem.Priority.low.description))
         
         let dataSet = PieChartDataSet(entries: dataEntires, label: "Tasks")
         

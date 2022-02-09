@@ -26,7 +26,7 @@ struct UncompletedTasksView: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: PriorityPieChart()) {
+                    NavigationLink(destination: ChartContainer(filterType: "tag-pie")) {
                         Image(systemName: "chart.pie.fill")
                             .font(.title3)
                             .foregroundColor(.orange)

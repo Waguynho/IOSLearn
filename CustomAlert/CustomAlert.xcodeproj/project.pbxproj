@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		762DE41B27B448810047DDA8 /* ChartContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762DE41A27B448810047DDA8 /* ChartContainer.swift */; };
 		7643823027B2FD20005F4880 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 7643822F27B2FD20005F4880 /* Charts */; };
 		7643823227B2FDB5005F4880 /* PriorityPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643823127B2FDB5005F4880 /* PriorityPieChart.swift */; };
-		7643823627B309AA005F4880 /* ChartContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643823527B309AA005F4880 /* ChartContainer.swift */; };
+		7643823627B309AA005F4880 /* PriorityChartConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643823527B309AA005F4880 /* PriorityChartConfig.swift */; };
 		76584DFA2790B2DD001A6606 /* CustomAlertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76584DF92790B2DD001A6606 /* CustomAlertUITests.swift */; };
 		76584DFC2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76584DFB2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift */; };
 		766157C32788D0F100F2DF9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CD526427887C4900E273D8 /* Assets.xcassets */; };
@@ -73,8 +74,9 @@
 /* Begin PBXFileReference section */
 		76056AAC27AAB6890075372C /* DataBaseLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataBaseLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76056AB627AAD0300075372C /* DataBaseLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataBaseLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		762DE41A27B448810047DDA8 /* ChartContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartContainer.swift; sourceTree = "<group>"; };
 		7643823127B2FDB5005F4880 /* PriorityPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityPieChart.swift; sourceTree = "<group>"; };
-		7643823527B309AA005F4880 /* ChartContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartContainer.swift; sourceTree = "<group>"; };
+		7643823527B309AA005F4880 /* PriorityChartConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityChartConfig.swift; sourceTree = "<group>"; };
 		76584DF72790B2DD001A6606 /* CustomAlertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomAlertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76584DF92790B2DD001A6606 /* CustomAlertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertUITests.swift; sourceTree = "<group>"; };
 		76584DFB2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -136,8 +138,9 @@
 		7643822D27B2FCBB005F4880 /* Charts */ = {
 			isa = PBXGroup;
 			children = (
+				7643823527B309AA005F4880 /* PriorityChartConfig.swift */,
 				7643823127B2FDB5005F4880 /* PriorityPieChart.swift */,
-				7643823527B309AA005F4880 /* ChartContainer.swift */,
+				762DE41A27B448810047DDA8 /* ChartContainer.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -443,7 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7643823627B309AA005F4880 /* ChartContainer.swift in Sources */,
+				7643823627B309AA005F4880 /* PriorityChartConfig.swift in Sources */,
 				76E59E1D278C6D9800C95A5B /* CompletedTasksSectionView.swift in Sources */,
 				76E59E21278C78AB00C95A5B /* CompletedTasksView.swift in Sources */,
 				76CD527C27889BB900E273D8 /* DataStore.swift in Sources */,
@@ -459,6 +462,7 @@
 				76CD52892788BA6800E273D8 /* ViewEx.swift in Sources */,
 				7643823227B2FDB5005F4880 /* PriorityPieChart.swift in Sources */,
 				76874646278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift in Sources */,
+				762DE41B27B448810047DDA8 /* ChartContainer.swift in Sources */,
 				76CD52832788B62300E273D8 /* TextFieldAlert.swift in Sources */,
 				76F3749B27AD48120064A1FA /* TodoDao.swift in Sources */,
 				76CD526127887C4700E273D8 /* CustomAlertApp.swift in Sources */,

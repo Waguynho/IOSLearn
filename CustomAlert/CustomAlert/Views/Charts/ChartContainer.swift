@@ -1,16 +1,11 @@
-//
-//  ChartContainer.swift
-//  CustomAlert
-//
-//  Created by Wagner Santos on 09/02/22.
-//
+
 
 import SwiftUI
 
 struct ChartContainer: View {
     
      @State  var showConfig = false
-     @State  var filterType: String = "tag-flag"
+     @State  var filterType: String = "tag-priority"
     
     var body: some View {
         VStack {
@@ -23,14 +18,9 @@ struct ChartContainer: View {
                     .font(.largeTitle)
             })
         }.sheet(isPresented: $showConfig,   content: {
-            PriorityChartConfig(filterType: $filterType, nameFilter: "")
+            PriorityChartConfig(filterType: $filterType, nameFilter: filterType)
         })
     }
 }
 
-struct ChartContainer_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        ChartContainer(filterType: "tag-pie")
-    }
-}
+

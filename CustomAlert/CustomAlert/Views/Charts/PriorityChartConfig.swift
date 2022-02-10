@@ -1,21 +1,19 @@
 
 import SwiftUI
 
-struct PriorityChartConfig: View {
+public struct PriorityChartConfig: View {
     
     @Binding public var filterType: String
     @State var nameFilter: String
     
-
-    
-    var body: some View {
-        
+   public var body: some View {
+       
         VStack (spacing: 8) {
             
             Picker("Type Chart", selection: $filterType) {
                 
                 Image(systemName: "flag")
-                    .tag("tag-flag")
+                    .tag("tag-priority")
                     .font(.largeTitle)
                 
                 Image(systemName: "checkmark.circle.fill")
@@ -28,25 +26,32 @@ struct PriorityChartConfig: View {
                 
                 changeFilterName()
             })
+            .onAppear(perform:  {
+                changeFilterName()
+            })
             
             Text(nameFilter)
             
             Spacer()
+            
+            
         }
         .padding()
         .padding(.top, 15)
-    }
+       
+   }
+        
     
     fileprivate func changeFilterName() {
-        if filterType == "tag-flag"{
+        if filterType == "tag-priority"{
             nameFilter = "By Priority"
         }else{
-            nameFilter = "By Done"
+            nameFilter = "By Conclusion"
         }
     }
 }
 struct PriorityChartConfig_Previews: PreviewProvider {
     static var previews: some View {
-        PriorityChartConfig(filterType: .constant("tag-flag"), nameFilter: "xx")
+        PriorityChartConfig(filterType: .constant("tag-priority"), nameFilter: "any")
     }
 }

@@ -30,6 +30,7 @@
 		76CD52852788B6DE00E273D8 /* TextFieldAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52842788B6DE00E273D8 /* TextFieldAlertViewController.swift */; };
 		76CD52872788B9C600E273D8 /* UITextFieldEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52862788B9C600E273D8 /* UITextFieldEx.swift */; };
 		76CD52892788BA6800E273D8 /* ViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52882788BA6800E273D8 /* ViewEx.swift */; };
+		76D9A5BA27B5489400C10355 /* ChartDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9A5B927B5489400C10355 /* ChartDataHelper.swift */; };
 		76DAF5A527AB191E00E35A13 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF5A427AB191E00E35A13 /* TodoItem.swift */; };
 		76E59E1D278C6D9800C95A5B /* CompletedTasksSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E59E1C278C6D9800C95A5B /* CompletedTasksSectionView.swift */; };
 		76E59E1F278C718600C95A5B /* ListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E59E1E278C718600C95A5B /* ListCellView.swift */; };
@@ -98,6 +99,7 @@
 		76CD52842788B6DE00E273D8 /* TextFieldAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlertViewController.swift; sourceTree = "<group>"; };
 		76CD52862788B9C600E273D8 /* UITextFieldEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldEx.swift; sourceTree = "<group>"; };
 		76CD52882788BA6800E273D8 /* ViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEx.swift; sourceTree = "<group>"; };
+		76D9A5B927B5489400C10355 /* ChartDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataHelper.swift; sourceTree = "<group>"; };
 		76DAF5A427AB191E00E35A13 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
 		76E59E1C278C6D9800C95A5B /* CompletedTasksSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTasksSectionView.swift; sourceTree = "<group>"; };
 		76E59E1E278C718600C95A5B /* ListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellView.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				76CD527B27889BB900E273D8 /* DataStore.swift */,
+				76D9A5B927B5489400C10355 /* ChartDataHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				7643823627B309AA005F4880 /* PriorityChartConfig.swift in Sources */,
 				76E59E1D278C6D9800C95A5B /* CompletedTasksSectionView.swift in Sources */,
 				76E59E21278C78AB00C95A5B /* CompletedTasksView.swift in Sources */,
+				76D9A5BA27B5489400C10355 /* ChartDataHelper.swift in Sources */,
 				76CD527C27889BB900E273D8 /* DataStore.swift in Sources */,
 				76CD527727888C5100E273D8 /* TodoItemEx.swift in Sources */,
 				76CD527927888DB600E273D8 /* Action.swift in Sources */,

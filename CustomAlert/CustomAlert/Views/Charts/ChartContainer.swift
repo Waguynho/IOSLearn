@@ -9,7 +9,7 @@ struct ChartContainer: View {
     
     var body: some View {
         VStack {
-            PriorityPieChart()
+            PriorityPieChart(filterType: $filterType)
             Button(action: {
                 showConfig.toggle()
             }, label: {

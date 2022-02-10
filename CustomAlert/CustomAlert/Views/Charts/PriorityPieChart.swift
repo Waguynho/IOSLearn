@@ -3,6 +3,7 @@ import SwiftUI
 
 struct PriorityPieChart: UIViewRepresentable {
     
+    @Binding public var filterType: String
     let dataHelper: ChartDataHelper = .init()
     
     
@@ -12,7 +13,9 @@ struct PriorityPieChart: UIViewRepresentable {
     
     func updateUIView(_ uiView: PieChartView, context: Context) {
         
-        var dataEntires : [PieChartDataEntry] = dataHelper.getChartData(byPriority: false)
+        let isPriotityData = filterType == "tag-priority"
+        
+        var dataEntires : [PieChartDataEntry] = dataHelper.getChartData(byPriority: isPriotityData)
       
         let dataSet = PieChartDataSet(entries: dataEntires, label: "Tasks")
         
@@ -36,11 +39,5 @@ struct PriorityPieChart: UIViewRepresentable {
         dataSet.valueFormatter =  DefaultValueFormatter(formatter: formatter)
        
         dataSet.colors = [.red, .brown,  .purple, .black]
-    }
-}
-
-struct TodoPieChart_Previews: PreviewProvider {
-    static var previews: some View {
-        PriorityPieChart()
     }
 }

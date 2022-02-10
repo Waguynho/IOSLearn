@@ -32,7 +32,7 @@ struct UncompletedTasksView: View {
                             .foregroundColor(.orange)
                     }
                     
-                    NavigationLink(destination: EmptyView()) {
+                    NavigationLink(destination: PriorityLineChart()) {
                         Image(systemName: "chart.line.uptrend.xyaxis")
                             .font(.title3)
                             .foregroundColor(.green)

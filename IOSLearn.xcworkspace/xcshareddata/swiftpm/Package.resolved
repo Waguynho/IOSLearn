@@ -38,6 +38,15 @@
         }
       },
       {
+        "package": "NewRelic",
+        "repositoryURL": "https://github.com/newrelic/newrelic-ios-agent-spm",
+        "state": {
+          "branch": null,
+          "revision": "04ee8c4c17bed95fe725e040493ee21d2a520e99",
+          "version": "7.3.4"
+        }
+      },
+      {
         "package": "swift-algorithms",
         "repositoryURL": "https://github.com/apple/swift-algorithms",
         "state": {

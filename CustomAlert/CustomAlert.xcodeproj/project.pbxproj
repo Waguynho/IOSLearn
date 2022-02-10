@@ -15,6 +15,8 @@
 		76584DFC2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76584DFB2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift */; };
 		766157C32788D0F100F2DF9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CD526427887C4900E273D8 /* Assets.xcassets */; };
 		766157C42788D0FD00F2DF9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CD526727887C4900E273D8 /* Preview Assets.xcassets */; };
+		766C31EB27B59DC100C9111B /* NewRelic in Frameworks */ = {isa = PBXBuildFile; productRef = 766C31EA27B59DC100C9111B /* NewRelic */; };
+		766C31ED27B5A12600C9111B /* PriotityLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766C31EC27B5A12600C9111B /* PriotityLineChart.swift */; };
 		76874646278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76874645278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift */; };
 		76874655278DCC2A00C0EBFC /* CustomAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76874654278DCC2A00C0EBFC /* CustomAlertTests.swift */; };
 		7687465D278DCC7500C0EBFC /* DataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7687465C278DCC7500C0EBFC /* DataStoreTests.swift */; };
@@ -81,6 +83,7 @@
 		76584DF72790B2DD001A6606 /* CustomAlertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomAlertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76584DF92790B2DD001A6606 /* CustomAlertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertUITests.swift; sourceTree = "<group>"; };
 		76584DFB2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		766C31EC27B5A12600C9111B /* PriotityLineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriotityLineChart.swift; sourceTree = "<group>"; };
 		76874645278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlertViewControllerEx.swift; sourceTree = "<group>"; };
 		76874652278DCC2A00C0EBFC /* CustomAlertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomAlertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76874654278DCC2A00C0EBFC /* CustomAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertTests.swift; sourceTree = "<group>"; };
@@ -130,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76F3749D27AD49550064A1FA /* DataBaseLayer.framework in Frameworks */,
+				766C31EB27B59DC100C9111B /* NewRelic in Frameworks */,
 				7643823027B2FD20005F4880 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +147,7 @@
 				7643823527B309AA005F4880 /* PriorityChartConfig.swift */,
 				7643823127B2FDB5005F4880 /* PriorityPieChart.swift */,
 				762DE41A27B448810047DDA8 /* ChartContainer.swift */,
+				766C31EC27B5A12600C9111B /* PriotityLineChart.swift */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 			name = CustomAlert;
 			packageProductDependencies = (
 				7643822F27B2FD20005F4880 /* Charts */,
+				766C31EA27B59DC100C9111B /* NewRelic */,
 			);
 			productName = CustomAlert;
 			productReference = 76CD525D27887C4700E273D8 /* CustomAlert.app */;
@@ -387,6 +393,7 @@
 			packageReferences = (
 				7687465E278DD96100C0EBFC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 				7643822E27B2FD20005F4880 /* XCRemoteSwiftPackageReference "Charts" */,
+				766C31E927B59DC100C9111B /* XCRemoteSwiftPackageReference "newrelic-ios-agent-spm" */,
 			);
 			productRefGroup = 76CD525E27887C4700E273D8 /* Products */;
 			projectDirPath = "";
@@ -469,6 +476,7 @@
 				762DE41B27B448810047DDA8 /* ChartContainer.swift in Sources */,
 				76CD52832788B62300E273D8 /* TextFieldAlert.swift in Sources */,
 				76F3749B27AD48120064A1FA /* TodoDao.swift in Sources */,
+				766C31ED27B5A12600C9111B /* PriotityLineChart.swift in Sources */,
 				76CD526127887C4700E273D8 /* CustomAlertApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -777,6 +785,14 @@
 				kind = branch;
 			};
 		};
+		766C31E927B59DC100C9111B /* XCRemoteSwiftPackageReference "newrelic-ios-agent-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/newrelic/newrelic-ios-agent-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		7687465E278DD96100C0EBFC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
@@ -792,6 +808,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7643822E27B2FD20005F4880 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
+		};
+		766C31EA27B59DC100C9111B /* NewRelic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 766C31E927B59DC100C9111B /* XCRemoteSwiftPackageReference "newrelic-ios-agent-spm" */;
+			productName = NewRelic;
 		};
 		76874662278DDAEB00C0EBFC /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -80,6 +80,7 @@
 		762DE41A27B448810047DDA8 /* ChartContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartContainer.swift; sourceTree = "<group>"; };
 		7643823127B2FDB5005F4880 /* PriorityPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityPieChart.swift; sourceTree = "<group>"; };
 		7643823527B309AA005F4880 /* PriorityChartConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityChartConfig.swift; sourceTree = "<group>"; };
+		7648626727B693C9007AF06B /* NewRelic.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NewRelic.xcframework; path = ../../../Downloads/NewRelic_XCFramework_Agent_7/NewRelic.xcframework; sourceTree = "<group>"; };
 		76584DF72790B2DD001A6606 /* CustomAlertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomAlertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76584DF92790B2DD001A6606 /* CustomAlertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertUITests.swift; sourceTree = "<group>"; };
 		76584DFB2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -182,6 +183,7 @@
 		76874661278DDAEB00C0EBFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7648626727B693C9007AF06B /* NewRelic.xcframework */,
 				76F3749C27AD49550064A1FA /* DataBaseLayer.framework */,
 				76056AB627AAD0300075372C /* DataBaseLayer.framework */,
 				76056AAC27AAB6890075372C /* DataBaseLayer.framework */,
@@ -344,6 +346,7 @@
 				76CD525A27887C4700E273D8 /* Frameworks */,
 				76CD525B27887C4700E273D8 /* Resources */,
 				76F3749F27AD49550064A1FA /* Embed Frameworks */,
+				7648626627B693A1007AF06B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -431,6 +434,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7648626627B693A1007AF06B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nSCRIPT='/usr/bin/find \"${SRCROOT}\" -name newrelic_postbuild.sh | head -n 1'\n/bin/sh \"${SCRIPT}\" \"AAd59a623a06e61d7569e1b9902b6d767ec946af4d-NRMA\"\necho 'Wagner Test'\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		76584DF32790B2DD001A6606 /* Sources */ = {

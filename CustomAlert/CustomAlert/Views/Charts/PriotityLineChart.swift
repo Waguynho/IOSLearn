@@ -8,28 +8,23 @@ import Foundation
 import SwiftUI
 
 struct PriorityLineChart : View {
-
+    
     private var temp: String? = nil
-   
-   var body: some View {
-       VStack {
-          Text("Line chart")
-       }.onAppear(perform: {
-
-           requestPriceBitcoin(uri: "https://www.google.com.br")
-           requestPriceBitcoin(uri: "https://cs193p.sites.stanford.edu/xpto")
-           requestPriceBitcoin(uri: "https://dsfasdfasd.edu/xpto")
-           
-           do {
-               try raiseException()
-           } catch  {
-               
-           }
-           
-//                      var x = temp!
-//                      print(x)
-       })
-   }
+    
+    
+    
+    var body: some View {
+        VStack {
+            Text("Line chart")
+        }.onAppear(perform: {
+            
+            executeHttpCalls()
+            
+            executeHandledException()
+            
+            //executeCrashApplication()
+        })
+    }
     
     func raiseException () throws {
         //throw new RuntimeException("A custom message here by Wagner")
@@ -41,23 +36,42 @@ struct PriorityLineChart : View {
     }
     
     public func requestPriceBitcoin(uri: String) {
-            guard
-                let url = URL(string: "https://www.google.com.br")
-            else {
-               
-                return
-            }
-            let task = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
-                if error == nil {
-                   
-                    print("sucessso ws")
-                } else {
-                    print(error)
-                    print("Erro ao fazer a consulta do preço.")
-                }
-            }
-            task.resume()
+        guard
+            let url = URL(string: "https://www.google.com.br")
+        else {
+            
+            return
         }
+        let task = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
+            if error == nil {
+                
+                print("sucessso ws")
+            } else {
+                print(error)
+                print("Erro ao fazer a consulta do preço.")
+            }
+        }
+        task.resume()
+    }
+    
+    fileprivate func executeCrashApplication() {
+        var x = temp!
+        print(x)
+    }
+    
+    fileprivate func executeHandledException() {
+        do {
+            try raiseException()
+        } catch  {
+            
+        }
+    }
+    
+    fileprivate func executeHttpCalls() {
+        requestPriceBitcoin(uri: "https://www.google.com.br")
+        requestPriceBitcoin(uri: "https://cs193p.sites.stanford.edu/xpto")
+        requestPriceBitcoin(uri: "https://dsfasdfasd.edu/xpto")
+    }
 }
 
 

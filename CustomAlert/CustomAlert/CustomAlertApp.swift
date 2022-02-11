@@ -16,6 +16,7 @@ struct CustomAlertApp: App {
 //        NewRelic.enableFeatures(NRMAFeatureFlags.NRFeatureFlag_InteractionTracing)
 //        NewRelic.enableFeatures(NRMAFeatureFlags.NRFeatureFlag_GestureInstrumentation)
         
+        //NRLogger.setLogLevels(NRLogLevelAll.rawValue)
         NewRelic.start(withApplicationToken:  temporaryAppToken)
     }
     

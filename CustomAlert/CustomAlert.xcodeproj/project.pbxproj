@@ -15,7 +15,6 @@
 		76584DFC2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76584DFB2790B2DD001A6606 /* CustomAlertUITestsLaunchTests.swift */; };
 		766157C32788D0F100F2DF9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CD526427887C4900E273D8 /* Assets.xcassets */; };
 		766157C42788D0FD00F2DF9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CD526727887C4900E273D8 /* Preview Assets.xcassets */; };
-		766C31EB27B59DC100C9111B /* NewRelic in Frameworks */ = {isa = PBXBuildFile; productRef = 766C31EA27B59DC100C9111B /* NewRelic */; };
 		766C31ED27B5A12600C9111B /* PriotityLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766C31EC27B5A12600C9111B /* PriotityLineChart.swift */; };
 		76874646278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76874645278DC16600C0EBFC /* TextFieldAlertViewControllerEx.swift */; };
 		76874655278DCC2A00C0EBFC /* CustomAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76874654278DCC2A00C0EBFC /* CustomAlertTests.swift */; };
@@ -32,6 +31,8 @@
 		76CD52852788B6DE00E273D8 /* TextFieldAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52842788B6DE00E273D8 /* TextFieldAlertViewController.swift */; };
 		76CD52872788B9C600E273D8 /* UITextFieldEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52862788B9C600E273D8 /* UITextFieldEx.swift */; };
 		76CD52892788BA6800E273D8 /* ViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52882788BA6800E273D8 /* ViewEx.swift */; };
+		76D3931F27B69CBF009C6680 /* NewRelic.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7648626727B693C9007AF06B /* NewRelic.xcframework */; };
+		76D3932027B69CBF009C6680 /* NewRelic.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7648626727B693C9007AF06B /* NewRelic.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		76D9A5BA27B5489400C10355 /* ChartDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9A5B927B5489400C10355 /* ChartDataHelper.swift */; };
 		76DAF5A527AB191E00E35A13 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF5A427AB191E00E35A13 /* TodoItem.swift */; };
 		76E59E1D278C6D9800C95A5B /* CompletedTasksSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E59E1C278C6D9800C95A5B /* CompletedTasksSectionView.swift */; };
@@ -67,6 +68,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				76D3932027B69CBF009C6680 /* NewRelic.xcframework in Embed Frameworks */,
 				76F3749E27AD49550064A1FA /* DataBaseLayer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -133,8 +135,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76D3931F27B69CBF009C6680 /* NewRelic.xcframework in Frameworks */,
 				76F3749D27AD49550064A1FA /* DataBaseLayer.framework in Frameworks */,
-				766C31EB27B59DC100C9111B /* NewRelic in Frameworks */,
 				7643823027B2FD20005F4880 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,7 +357,6 @@
 			name = CustomAlert;
 			packageProductDependencies = (
 				7643822F27B2FD20005F4880 /* Charts */,
-				766C31EA27B59DC100C9111B /* NewRelic */,
 			);
 			productName = CustomAlert;
 			productReference = 76CD525D27887C4700E273D8 /* CustomAlert.app */;
@@ -451,7 +452,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nSCRIPT='/usr/bin/find \"${SRCROOT}\" -name newrelic_postbuild.sh | head -n 1'\n/bin/sh \"${SCRIPT}\" \"AAd59a623a06e61d7569e1b9902b6d767ec946af4d-NRMA\"\necho 'Wagner Test'\n";
+			shellScript = "SCRIPT=`/usr/bin/find \"${SRCROOT}\" -name newrelic_postbuild.sh | head -n 1`\n\nif [ -z \"${SCRIPT}\"]; then\nARTIFACT_DIR=\"${BUILD_DIR%Build/*}SourcePackages/artifacts\"\n SCRIPT=`/usr/bin/find \"${ARTIFACT_DIR}\" -name newrelic_postbuild.sh | head -n 1`\nfi\n\n/bin/sh \"${SCRIPT}\" \"AAd59a623a06e61d7569e1b9902b6d767ec946af4d-NRMA\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -831,11 +832,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7643822E27B2FD20005F4880 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
-		};
-		766C31EA27B59DC100C9111B /* NewRelic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 766C31E927B59DC100C9111B /* XCRemoteSwiftPackageReference "newrelic-ios-agent-spm" */;
-			productName = NewRelic;
 		};
 		76874662278DDAEB00C0EBFC /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;

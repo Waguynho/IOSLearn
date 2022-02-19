@@ -6,10 +6,11 @@
 //
 import Foundation
 import SwiftUI
+import NewRelic
 
 struct PriorityLineChart : View {
     
-    private var temp: String? = nil
+    private var temp: Int? = nil
     
     
     
@@ -22,7 +23,15 @@ struct PriorityLineChart : View {
             
             executeHandledException()
             
-            //executeCrashApplication()
+          //let resultAtt =  NewRelic.setAttribute("wscustom", value: "ws1")
+            
+            do {
+                try raiseException()
+                let attt = NewRelic.crashNow("Test Crash Ws ")
+            } catch {
+                NewRelic.recordError(error, attributes: [ "int" : 1, "Test Group" : "Wagner teste error" ])
+               //let x = 9 + temp! //Crash aplication
+            }
         })
     }
     
@@ -37,7 +46,7 @@ struct PriorityLineChart : View {
     
     public func requestPriceBitcoin(uri: String) {
         guard
-            let url = URL(string: "https://www.google.com.br")
+            let url = URL(string: uri)
         else {
             
             return
@@ -45,7 +54,7 @@ struct PriorityLineChart : View {
         let task = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
             if error == nil {
                 
-                print("sucessso ws")
+                print("sucessso ws \(data)")
             } else {
                 print(error)
                 print("Erro ao fazer a consulta do preço.")
@@ -68,9 +77,9 @@ struct PriorityLineChart : View {
     }
     
     fileprivate func executeHttpCalls() {
+        requestPriceBitcoin(uri: "https://cs193p.sites.stanford.edu/xptoZZ")
+        requestPriceBitcoin(uri: "https://cs193p.sites.stanford.edu")
         requestPriceBitcoin(uri: "https://www.google.com.br")
-        requestPriceBitcoin(uri: "https://cs193p.sites.stanford.edu/xpto")
-        requestPriceBitcoin(uri: "https://dsfasdfasd.edu/xpto")
     }
 }
 

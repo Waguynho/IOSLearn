@@ -20,6 +20,7 @@
 		76874655278DCC2A00C0EBFC /* CustomAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76874654278DCC2A00C0EBFC /* CustomAlertTests.swift */; };
 		7687465D278DCC7500C0EBFC /* DataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7687465C278DCC7500C0EBFC /* DataStoreTests.swift */; };
 		76874663278DDAEB00C0EBFC /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 76874662278DDAEB00C0EBFC /* SnapshotTesting */; };
+		769ABF3F27BBDE4B0066190E /* NewRelic in Frameworks */ = {isa = PBXBuildFile; productRef = 769ABF3E27BBDE4B0066190E /* NewRelic */; };
 		76CD526127887C4700E273D8 /* CustomAlertApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD526027887C4700E273D8 /* CustomAlertApp.swift */; };
 		76CD526327887C4700E273D8 /* UncompletedTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD526227887C4700E273D8 /* UncompletedTasksView.swift */; };
 		76CD52752788881F00E273D8 /* DateEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52742788881F00E273D8 /* DateEx.swift */; };
@@ -31,8 +32,6 @@
 		76CD52852788B6DE00E273D8 /* TextFieldAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52842788B6DE00E273D8 /* TextFieldAlertViewController.swift */; };
 		76CD52872788B9C600E273D8 /* UITextFieldEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52862788B9C600E273D8 /* UITextFieldEx.swift */; };
 		76CD52892788BA6800E273D8 /* ViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD52882788BA6800E273D8 /* ViewEx.swift */; };
-		76D3931F27B69CBF009C6680 /* NewRelic.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7648626727B693C9007AF06B /* NewRelic.xcframework */; };
-		76D3932027B69CBF009C6680 /* NewRelic.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7648626727B693C9007AF06B /* NewRelic.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		76D9A5BA27B5489400C10355 /* ChartDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D9A5B927B5489400C10355 /* ChartDataHelper.swift */; };
 		76DAF5A527AB191E00E35A13 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DAF5A427AB191E00E35A13 /* TodoItem.swift */; };
 		76E59E1D278C6D9800C95A5B /* CompletedTasksSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E59E1C278C6D9800C95A5B /* CompletedTasksSectionView.swift */; };
@@ -68,7 +67,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				76D3932027B69CBF009C6680 /* NewRelic.xcframework in Embed Frameworks */,
 				76F3749E27AD49550064A1FA /* DataBaseLayer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -135,8 +133,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76D3931F27B69CBF009C6680 /* NewRelic.xcframework in Frameworks */,
 				76F3749D27AD49550064A1FA /* DataBaseLayer.framework in Frameworks */,
+				769ABF3F27BBDE4B0066190E /* NewRelic in Frameworks */,
 				7643823027B2FD20005F4880 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,7 +346,6 @@
 				76CD525A27887C4700E273D8 /* Frameworks */,
 				76CD525B27887C4700E273D8 /* Resources */,
 				76F3749F27AD49550064A1FA /* Embed Frameworks */,
-				7648626627B693A1007AF06B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -357,6 +354,7 @@
 			name = CustomAlert;
 			packageProductDependencies = (
 				7643822F27B2FD20005F4880 /* Charts */,
+				769ABF3E27BBDE4B0066190E /* NewRelic */,
 			);
 			productName = CustomAlert;
 			productReference = 76CD525D27887C4700E273D8 /* CustomAlert.app */;
@@ -397,7 +395,7 @@
 			packageReferences = (
 				7687465E278DD96100C0EBFC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 				7643822E27B2FD20005F4880 /* XCRemoteSwiftPackageReference "Charts" */,
-				766C31E927B59DC100C9111B /* XCRemoteSwiftPackageReference "newrelic-ios-agent-spm" */,
+				769ABF3D27BBDE4B0066190E /* XCRemoteSwiftPackageReference "newrelic-ios-sdk" */,
 			);
 			productRefGroup = 76CD525E27887C4700E273D8 /* Products */;
 			projectDirPath = "";
@@ -435,26 +433,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		7648626627B693A1007AF06B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "SCRIPT=`/usr/bin/find \"${SRCROOT}\" -name newrelic_postbuild.sh | head -n 1`\n\nif [ -z \"${SCRIPT}\"]; then\nARTIFACT_DIR=\"${BUILD_DIR%Build/*}SourcePackages/artifacts\"\n SCRIPT=`/usr/bin/find \"${ARTIFACT_DIR}\" -name newrelic_postbuild.sh | head -n 1`\nfi\n\n/bin/sh \"${SCRIPT}\" \"AAd59a623a06e61d7569e1b9902b6d767ec946af4d-NRMA\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		76584DF32790B2DD001A6606 /* Sources */ = {
@@ -708,9 +686,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"CustomAlert/Preview Content\"";
+				DEVELOPMENT_TEAM = 8J46ZYZB26;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -722,9 +702,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ws.company.CustomAlert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "provision-profile-development-2022-wagner";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -736,9 +717,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"CustomAlert/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -750,9 +733,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = ws.company.CustomAlert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -809,20 +793,20 @@
 				kind = branch;
 			};
 		};
-		766C31E927B59DC100C9111B /* XCRemoteSwiftPackageReference "newrelic-ios-agent-spm" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/newrelic/newrelic-ios-agent-spm";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
 		7687465E278DD96100C0EBFC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
+			};
+		};
+		769ABF3D27BBDE4B0066190E /* XCRemoteSwiftPackageReference "newrelic-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/newrelic/newrelic-ios-sdk";
+			requirement = {
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -837,6 +821,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7687465E278DD96100C0EBFC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
+		};
+		769ABF3E27BBDE4B0066190E /* NewRelic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 769ABF3D27BBDE4B0066190E /* XCRemoteSwiftPackageReference "newrelic-ios-sdk" */;
+			productName = NewRelic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

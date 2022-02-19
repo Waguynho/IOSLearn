@@ -39,11 +39,11 @@
       },
       {
         "package": "NewRelic",
-        "repositoryURL": "https://github.com/newrelic/newrelic-ios-agent-spm",
+        "repositoryURL": "https://github.com/newrelic/newrelic-ios-sdk",
         "state": {
-          "branch": null,
+          "branch": "main",
           "revision": "04ee8c4c17bed95fe725e040493ee21d2a520e99",
-          "version": "7.3.4"
+          "version": null
         }
       },
       {

@@ -4,19 +4,19 @@ import GRDB
 
 open class DaoBase <T: DataEntityProtocol> {
     
-    private var dbQueue :  DatabaseQueue
+    private var dbQueue :  DatabaseQueue = .init()
     
     private var basePath = NSSearchPathForDirectoriesInDomains(
         .documentDirectory, .userDomainMask, true
-    ).first!
+    ).first! + "/ws/custom-alert"
     
    public init() {
        
-       //self.init()
        
-       let baseConnection = BaseConnection(pathDb: "\(basePath)/ws/alert-db.sqlite3")
-       
+       let baseConnection = BaseConnection(pathDb: "\(basePath)/alert-db.sqlite3")
+       self.createFolderDataBase()
        self.dbQueue = baseConnection.connectDd()!
+       
    }
     
     public func delete (_ dataEntity: T) {
@@ -145,5 +145,14 @@ public extension DaoBase {
         }
         return dbQueue
     }
-  
+    
+    private func createFolderDataBase(){
+        if !FileManager.default.fileExists(atPath: basePath) {
+            do {
+                try FileManager.default.createDirectory(atPath: basePath, withIntermediateDirectories: true, attributes: nil)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
 }

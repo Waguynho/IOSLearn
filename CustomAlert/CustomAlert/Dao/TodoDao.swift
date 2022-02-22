@@ -1,6 +1,6 @@
 import DataBaseLayer
 
-final class TodoDao : DaoBase<TodoItem> {
+open class TodoDao : DaoBase<TodoItem> {
     
     public func getCompletedItems() -> [TodoItem] {
         

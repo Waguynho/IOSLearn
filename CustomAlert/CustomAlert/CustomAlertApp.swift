@@ -15,8 +15,8 @@ struct CustomAlertApp: App {
         let value = NSString(string: "ws3")
         NRLogger.setLogLevels(NRLogLevelALL.rawValue)
         NewRelic.start(withApplicationToken:  wsToken)
-        let result = NewRelic.setAttribute("wscustom", value: value)
-        let result2 = NewRelic.setAttribute("DISGRACA", value: value)
+        let result = NewRelic.setAttribute("wscustom-1", value: value)
+        let result2 = NewRelic.setAttribute("wscustom-2", value: value)
         var x = 0
     }
     
